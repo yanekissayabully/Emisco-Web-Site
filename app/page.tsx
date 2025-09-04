@@ -5,9 +5,12 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Leaf, Recycle, Shield, Zap, Star, Users, Award } from "lucide-react"
 import Link from "next/link"
 import { useI18n } from "@/providers/i18n-providers"
+import TelegramModal from "@/components/TelegramModal"
+import { useState } from 'react';
 
 export default function HomePage() {
   const { t } = useI18n()
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -283,12 +286,12 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-in slide-in-from-bottom-4 duration-1000 delay-300">
               <Button
-                asChild
-                size="lg"
+                size="lg" // Убираем asChild
                 variant="secondary"
                 className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-white text-primary hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                onClick={() => setIsModalOpen(true)} // Добавляем обработчик клика
               >
-                <Link href="/services">{t('submitRequest')}</Link>
+                {t('submitRequest')}
               </Button>
               <Button
                 asChild
@@ -302,6 +305,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Добавляем модалку */}
+      <TelegramModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   )
 }

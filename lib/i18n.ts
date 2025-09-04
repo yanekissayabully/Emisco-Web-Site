@@ -4,6 +4,8 @@
 //   fr: "Français",
 // } as const
 
+import { send } from "process"
+
 // export type Language = keyof typeof languages
 
 // export const translations = {
@@ -360,6 +362,24 @@ footerNavTitle1: "Navigation",
 footerNavTitle2: "Resources",
 footerInfo: "© 2024 Emisco. All rights reserved. Building a sustainable future.",
 
+
+  "nameMinError": "The name must contain at least 2 characters",
+  "requiredField": "Required field",
+  "emailError": "Invalid email",
+  "phoneError": "Invalid phone number",
+  "submitRequest2": "Submit a request",
+  "nameField": "Name",
+  "emailField": "Email",
+  "phoneField": "Phone",
+  "cancelButton": "Cancel",
+  "submitting": "Submitting...",
+  "sendButton": "Send",
+  "submitSuccess": "Thank you! Your request has been sent.",
+  "submitError": "Error while sending. Please try again.",
+      namePlaceholder: "Андрей",
+    emailPlaceholder: "example@mail.com",
+    phonePlaceholder: "+7 (999) 999-99-99"
+
   },
 
   de: {
@@ -608,6 +628,25 @@ footerNav8: "Installationsanleitung",
 footerNavTitle1: "Navigation",
 footerNavTitle2: "Ressourcen",
 footerInfo: "© 2024 Emisco. Alle Rechte vorbehalten. Wir bauen eine nachhaltige Zukunft.",
+
+
+
+"nameMinError": "Der Name muss mindestens 2 Zeichen enthalten",
+  "requiredField": "Pflichtfeld",
+  "emailError": "Ungültige E-Mail",
+  "phoneError": "Ungültige Telefonnummer",
+  "submitRequest2": "Anfrage senden",
+  "nameField": "Name",
+  "emailField": "E-Mail",
+  "phoneField": "Telefon",
+  "cancelButton": "Abbrechen",
+  "submitting": "Wird gesendet...",
+  "sendButton": "Senden",
+  "submitSuccess": "Danke! Ihre Anfrage wurde gesendet.",
+  "submitError": "Fehler beim Senden. Bitte versuchen Sie es erneut.",
+      namePlaceholder: "Андрей",
+    emailPlaceholder: "example@mail.com",
+    phonePlaceholder: "+7 (999) 999-99-99"
 
 
   },
@@ -859,6 +898,25 @@ footerNavTitle1: "Navigation",
 footerNavTitle2: "Ressources",
 footerInfo: "© 2024 Emisco. Tous droits réservés. Construisons un avenir durable.",
 
+
+
+"nameMinError": "Le nom doit contenir au moins 2 caractères",
+  "requiredField": "Champ obligatoire",
+  "emailError": "Email invalide",
+  "phoneError": "Numéro de téléphone invalide",
+  "submitRequest2": "Envoyer une demande",
+  "nameField": "Nom",
+  "emailField": "Email",
+  "phoneField": "Téléphone",
+  "cancelButton": "Annuler",
+  "submitting": "Envoi en cours...",
+  "sendButton": "Envoyer",
+  "submitSuccess": "Merci ! Votre demande a été envoyée.",
+  "submitError": "Erreur lors de l’envoi. Veuillez réessayer.",
+    namePlaceholder: "Андрей",
+    emailPlaceholder: "example@mail.com",
+    phonePlaceholder: "+7 (999) 999-99-99"
+
   },
 
   ru: {
@@ -1097,7 +1155,24 @@ portfolioCtaButton2: "Посмотреть продукты",
     footerInfo: "© 2024 Emisco. Все права защищены. Строим устойчивое будущее.",
 
 
-    
+    //ModalForm
+    nameMinError: "Имя должно содержать не менее 2 символов",
+    requiredField: "Обязательное поле",
+    emailError: "Некорректный email",
+    phoneError: "Некорректный номер телефона",
+    submitRequest2: "Оставить заявку",
+    nameField: "Имя",
+    emailField: "Email",
+    phoneField: "Телефон",
+    cancelButton: "Отмена",
+    submitting: "Отправка...",
+    sendButton: "Отправить",
+    submitSuccess: "Спасибо! Ваша заявка отправлена.",
+    submitError: "Ошибка при отправке. Попробуйте ещё раз.",
+
+    namePlaceholder: "Андрей",
+    emailPlaceholder: "example@mail.com",
+    phonePlaceholder: "+7 (999) 999-99-99"
   }
 } as const
 
