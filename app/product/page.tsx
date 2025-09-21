@@ -518,6 +518,46 @@ export default function ProductPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <img
+                src="/panels.png"
+                alt="Emisco miscanthus construction blocks"
+                className="rounded-lg shadow-2xl w-full h-auto"
+              />
+            </div>
+            <div>
+              <Badge className="mb-4 bg-secondary/10 text-secondary border-secondary/20">
+                {t("productBadge")}
+              </Badge>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
+                {/* {t("productTitle")} */} Мискантус-панель
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                {/* {t("productDescription")} */}  Панели могут устанавливаться как в вертикальном, так и в горизонтальном положении. По всему периметру имеется треугольный паз для заливки стыковочного раствора и два сквозных монтажных отверстия.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button asChild size="lg" className="text-lg px-8 py-3">
+                  <Link href="#specifications">
+                    {t("productButton1")} <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-3 bg-transparent">
+                  <Link href="#download">
+                    <Download className="mr-2 h-5 w-5" />
+                    {t("productButton2")}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
       {/* Key Features */}
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -573,235 +613,238 @@ export default function ProductPage() {
       </section>
 
       {/* Technical Specifications */}
-      <section id="specifications" className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">{t('specsTitle')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('specsSubtitle')}
-            </p>
-          </div>
+<section id="specifications" className="py-20">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">
+        Technische Daten der Paneele
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Vergleich von Hanfsteine, Diffutehrm, M-ISOI und Emisco 101-0
+      </p>
+    </div>
 
-          <Tabs defaultValue="thermal" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 mb-8">
-              <TabsTrigger value="thermal">{t('specsTitle1')}</TabsTrigger>
-              <TabsTrigger value="structural">{t('specsTitle2')}</TabsTrigger>
-              <TabsTrigger value="environmental">{t('specsTitle3')}</TabsTrigger>
-              <TabsTrigger value="certifications">{t('specsTitle4')}</TabsTrigger>
-            </TabsList>
+    <Tabs defaultValue="thermal" className="w-full">
+      <TabsList
+  className="
+    grid w-full gap-2 mb-8
+    grid-cols-2 sm:grid-cols-4
+  "
+>
+  <TabsTrigger
+    value="thermal"
+    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+  >
+    Thermische Werte
+  </TabsTrigger>
+  <TabsTrigger
+    value="structural"
+    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+  >
+    Mechanische Werte
+  </TabsTrigger>
+  <TabsTrigger
+    value="environmental"
+    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+  >
+    Bauphysik
+  </TabsTrigger>
+  <TabsTrigger
+    value="certifications"
+    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+  >
+    Prüfungen
+  </TabsTrigger>
+</TabsList>
 
-            <TabsContent value="thermal" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Thermometer className="h-5 w-5 text-primary" />
-                    Thermal Performance
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Thermal Conductivity (λ)</span>
-                        <span>0.045 W/mK</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">R-Value (200mm)</span>
-                        <span>R-25 m²K/W</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Specific Heat Capacity</span>
-                        <span>1,800 J/kgK</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Thermal Diffusivity</span>
-                        <span>2.1 × 10⁻⁷ m²/s</span>
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Operating Temperature</span>
-                        <span>-40°C to +80°C</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Thermal Expansion</span>
-                        <span>8 × 10⁻⁶ /K</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Freeze-Thaw Resistance</span>
-                        <span>Excellent</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Moisture Regulation</span>
-                        <span>Natural breathability</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
 
-            <TabsContent value="structural" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Ruler className="h-5 w-5 text-primary" />
-                    Structural Properties
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Compressive Strength</span>
-                        <span>12-18 MPa</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Flexural Strength</span>
-                        <span>2.5 MPa</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Tensile Strength</span>
-                        <span>1.8 MPa</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Modulus of Elasticity</span>
-                        <span>3,200 MPa</span>
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Density</span>
-                        <span>420-640 kg/m³</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Water Absorption</span>
-                        <span>12-15%</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Dimensional Stability</span>
-                        <span>±2mm</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Durability</span>
-                        <span>100+ years</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+      {/* Thermische Werte */}
+      <TabsContent value="thermal">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Thermometer className="h-5 w-5 text-primary" />
+              Thermische Eigenschaften
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="p-2">Eigenschaft</th>
+                    <th className="p-2">Hanfsteine</th>
+                    <th className="p-2">Diffutehrm</th>
+                    <th className="p-2">M-ISOI</th>
+                    <th className="p-2">Emisco 101-0</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Rohdichte (kg/m³)</td>
+                    <td className="p-2">300</td>
+                    <td className="p-2">190</td>
+                    <td className="p-2">115,5</td>
+                    <td className="p-2">400</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Wärmeleitfähigkeit λ (W/mK)</td>
+                    <td className="p-2">0.070</td>
+                    <td className="p-2">0.043</td>
+                    <td className="p-2">0.051</td>
+                    <td className="p-2">0.085</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Spez. Wärmekapazität (J/kgK)</td>
+                    <td className="p-2">2100</td>
+                    <td className="p-2">1244</td>
+                    <td className="p-2">1087</td>
+                    <td className="p-2">–</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2 font-medium">μ-Wert</td>
+                    <td className="p-2">5</td>
+                    <td className="p-2">1,7</td>
+                    <td className="p-2">3,67</td>
+                    <td className="p-2">–</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </TabsContent>
 
-            <TabsContent value="environmental" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Leaf className="h-5 w-5 text-primary" />
-                    Environmental Impact
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Carbon Footprint</span>
-                        <span className="text-primary font-bold">-2.3 kg CO2/block</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Embodied Energy</span>
-                        <span>85 MJ/m³</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Renewable Content</span>
-                        <span className="text-secondary font-bold">100%</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Recyclability</span>
-                        <span>Fully biodegradable</span>
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">VOC Emissions</span>
-                        <span>Zero</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Formaldehyde</span>
-                        <span>None</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">Indoor Air Quality</span>
-                        <span>Excellent</span>
-                      </div>
-                      <div className="flex justify-between border-b pb-2">
-                        <span className="font-medium">End of Life</span>
-                        <span>Compostable</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+      {/* Mechanische Werte */}
+      <TabsContent value="structural">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Ruler className="h-5 w-5 text-primary" />
+              Mechanische Eigenschaften
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="p-2">Eigenschaft</th>
+                    <th className="p-2">Hanfsteine</th>
+                    <th className="p-2">Diffutehrm</th>
+                    <th className="p-2">M-ISOI</th>
+                    <th className="p-2">Emisco 101-0</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Druckspannung (10% Stauchung, kPa)</td>
+                    <td className="p-2">70</td>
+                    <td className="p-2">80</td>
+                    <td className="p-2">121</td>
+                    <td className="p-2">536</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2 font-medium">Zugfestigkeit ⟂ (kPa)</td>
+                    <td className="p-2">7,5</td>
+                    <td className="p-2">10</td>
+                    <td className="p-2">6,7</td>
+                    <td className="p-2">29,3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </TabsContent>
 
-            <TabsContent value="certifications" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    Certifications & Standards
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-primary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">CE Marking</h4>
-                      <p className="text-sm text-muted-foreground">European Conformity</p>
-                    </div>
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-secondary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">ISO 14001</h4>
-                      <p className="text-sm text-muted-foreground">Environmental Management</p>
-                    </div>
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-primary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">LEED Credits</h4>
-                      <p className="text-sm text-muted-foreground">Green Building Points</p>
-                    </div>
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-secondary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">BREEAM</h4>
-                      <p className="text-sm text-muted-foreground">Sustainability Assessment</p>
-                    </div>
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-primary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">Fire Safety</h4>
-                      <p className="text-sm text-muted-foreground">Class A Rating</p>
-                    </div>
-                    <div className="text-center p-4 border rounded-lg">
-                      <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle className="h-8 w-8 text-secondary" />
-                      </div>
-                      <h4 className="font-serif font-bold mb-2">Cradle to Cradle</h4>
-                      <p className="text-sm text-muted-foreground">Gold Certified</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
+      {/* Bauphysik */}
+      <TabsContent value="environmental">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Leaf className="h-5 w-5 text-primary" />
+              Bauphysikalische Bewertung
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-disc pl-6 space-y-3">
+              <li>
+                Wärmeschutz: U = 0.17 W/(m²K) → 
+                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                  Sehr gut
+                </span>
+              </li>
+              <li>
+                Feuchteschutz: Tauwasser 455 g/m², Trocknungszeit 13 Tage, Holzfeuchte +0,1% → 
+                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                  Sehr gut
+                </span>
+              </li>
+              <li>
+                Hitzeschutz: Amplitudendämpfung &gt; 100, Wärmekapazität innen 96 kJ/m²K → 
+                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                  Sehr gut
+                </span>
+              </li>
+              <li>
+                Alternative Materialien (z. B. M-ISOI bei Feuchte) → 
+                <span className="ml-2 px-2 py-1 rounded-full text-white bg-red-600 text-xs">
+                  mangelhaft
+                </span>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+      </TabsContent>
+
+      {/* Prüfungen */}
+      <TabsContent value="certifications">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-primary" />
+              Prüfberichte & Klassifizierung
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="p-2">Eigenschaft</th>
+                    <th className="p-2">Hanfsteine</th>
+                    <th className="p-2">Diffutehrm</th>
+                    <th className="p-2">M-ISOI</th>
+                    <th className="p-2">Emisco 101-0</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Brandverhalten (EN 13501-1)</td>
+                    <td className="p-2">Klasse B-s1</td>
+                    <td className="p-2">Klasse E</td>
+                    <td className="p-2">Klasse e</td>
+                    <td className="p-2">Klasse B-s1</td>
+                  </tr>
+                  <tr>
+                    <td className="p-2 font-medium">Prüfinstitute</td>
+                    <td colSpan={4} className="p-2">
+                      EMPA, VKFZIP, TüV, M-Isol
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </TabsContent>
+    </Tabs>
+  </div>
+</section>
+
+
+
 
       {/* Installation Guide */}
       <section className="py-20 bg-muted/50">

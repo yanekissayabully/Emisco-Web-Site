@@ -9,25 +9,6 @@ export default function AboutPage() {
   const { t } = useI18n()
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-{/* <section
-  className="relative py-20 bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/miscanthus-field-golden-light.png')" }}
->
-  <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
-
-  <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="max-w-4xl mx-auto text-center">
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-white mb-6">
-        {t('aboutTitle')}
-      </h1>
-      <p className="text-xl sm:text-2xl text-gray-100 mb-8 leading-relaxed">
-        {t('aboutSubtitle')}
-      </p>
-    </div>
-  </div>
-</section> */}
-
 
       {/* Company Story Section */}
       <section className="py-24">
@@ -101,65 +82,6 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-serif font-bold mb-4 text-primary">{t('cardTitle3')}</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {t('cardDescription3')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">{t('teamTitle')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('teamDescription')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <img
-                  src="/placeholder-user.jpg"
-                  alt="CEO Portrait"
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h3 className="text-xl font-serif font-bold mb-2">{t('name1')}</h3>
-                <p className="text-secondary font-medium mb-4">{t('position1')}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t('description1')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <img
-                  src="/placeholder-user.jpg"
-                  alt="CTO Portrait"
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h3 className="text-xl font-serif font-bold mb-2">{t('name2')}</h3>
-                <p className="text-secondary font-medium mb-4">{t('position2')}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t('description2')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <img
-                  src="/placeholder-user.jpg"
-                  alt="Head of Production Portrait"
-                  className="w-24 h-24 rounded-full mx-auto mb-6 object-cover"
-                />
-                <h3 className="text-xl font-serif font-bold mb-2">{t('name3')}</h3>
-                <p className="text-secondary font-medium mb-4">{t('position3')}</p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {t('description3')}
                 </p>
               </CardContent>
             </Card>

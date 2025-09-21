@@ -30,9 +30,13 @@ export function Footer() {
                 <Phone className="h-5 w-5 text-cyan-400 flex-shrink-0" />
                 <span>+41795760405</span>
               </Link>
-              <Link href="mailto:info@emisco.com" className="flex items-center space-x-3 text-slate-300 hover:text-cyan-400 transition-colors">
+              <Link href="mailto:info@emisco.ch" className="flex items-center space-x-3 text-slate-300 hover:text-cyan-400 transition-colors">
                 <Mail className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                <span>info@emisco.com</span>
+                <span>info@emisco.ch</span>
+              </Link>
+              <Link href="mailto:info@esm-technologie.ch" className="flex items-center space-x-3 text-slate-300 hover:text-cyan-400 transition-colors">
+                <Mail className="h-5 w-5 text-cyan-400 flex-shrink-0" />
+                <span>info@esm-technologie.ch</span>
               </Link>
             </div>
           </div>

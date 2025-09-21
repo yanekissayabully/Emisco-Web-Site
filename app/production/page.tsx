@@ -440,15 +440,50 @@ export default function ProductionProcessPage() {
             </p>
           </div>
 
+<div className="mb-16">
+  <div className="relative">
+    <div className="flex overflow-hidden">
+      <div className="flex animate-marquee whitespace-nowrap py-4">
+        {[7, 8, 9, 10, 11, 12].map((item) => (
+          <div
+            key={item}
+            className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
+          >
+            <img
+              src={`/production2/production-${item}.JPEG`}
+              alt={`Производственный процесс ${item}`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+        {/* Дубликат для бесконечной прокрутки */}
+        {[7, 8, 9, 10, 11, 12].map((item) => (
+          <div
+            key={`copy-${item}`}
+            className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
+          >
+            <img
+              src={`/production2/production-${item}.JPEG`}
+              alt={`Производственный процесс ${item}`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                   <div className="text-2xl font-bold text-primary">1</div>
                 </div>
-                <h3 className="text-xl font-serif font-bold mb-4">Подготовка сырья</h3>
+                <h3 className="text-xl font-serif font-bold mb-4">Подготовка деревянного каркаса</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Древесная щепа определенных пород дерева проходит калибровку и минерализацию для повышения адгезии с цементом
+                  В начале процесса формируется деревянный каркас. Он служит основой и придаёт будущей панели статическую прочность, обеспечивая стабильность конструкции на долгие годы.
                 </p>
               </CardContent>
             </Card>
@@ -458,9 +493,9 @@ export default function ProductionProcessPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                   <div className="text-2xl font-bold text-primary">2</div>
                 </div>
-                <h3 className="text-xl font-serif font-bold mb-4">Смешивание</h3>
+                <h3 className="text-xl font-serif font-bold mb-4">Измельчение мискантуса</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Точное дозирование щепы, цемента и модифицирующих добавок в высокоскоростных смесителях
+                  Стебли мискантуса перерабатываются в щепу и доводятся до оптимального размера. Такая структура позволяет материалу лучше связываться с цементирующим компонентом.
                 </p>
               </CardContent>
             </Card>
@@ -470,9 +505,9 @@ export default function ProductionProcessPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                   <div className="text-2xl font-bold text-primary">3</div>
                 </div>
-                <h3 className="text-xl font-serif font-bold mb-4">Формование</h3>
+                <h3 className="text-xl font-serif font-bold mb-4">Создание смеси</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Смесь уплотняется в формах под высоким давлением для достижения однородной плотности
+                  Щепа мискантуса тщательно перемешивается с водой и 10% бетона. В итоге получается экологичный состав, где 90% натурального сырья и лишь 10% связующего материала.
                 </p>
               </CardContent>
             </Card>
@@ -482,13 +517,58 @@ export default function ProductionProcessPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                   <div className="text-2xl font-bold text-primary">4</div>
                 </div>
-                <h3 className="text-xl font-serif font-bold mb-4">Сушка и отверждение</h3>
+                <h3 className="text-xl font-serif font-bold mb-4">Формование панели</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Контролируемый процесс сушки в камерах с оптимальной температурой и влажностью
+                  Готовая смесь заливается в деревянный каркас, установленный на формировочном столе. Каждый миллиметр тщательно заполняется материалом.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">5</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Уплотнение</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Смесь аккуратно утрамбовывается внутри каркаса. Это позволяет устранить все пустоты и гарантирует равномерную плотность панели.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">6</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Горизонтальная сушка</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Формы с панелями выдерживаются в горизонтальном положении на протяжении 7 дней для первичного высыхания.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">7</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Вертикальная досушка</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  После этого панели устанавливаются вертикально и проходят завершающий этап сушки. Полный цикл составляет 21 день.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">8</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Готовность к монтажу</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  По завершении цикла панель полностью готова к установке. На строительной площадке она монтируется с помощью крана и соединяется специальными винтами, образуя надёжные и долговечные стены.
                 </p>
               </CardContent>
             </Card>
           </div>
+
 
           {/* Видео процесса производства */}
           <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
@@ -519,23 +599,43 @@ export default function ProductionProcessPage() {
 
           {/* Лента фотографий производства */}
           <div className="mb-16">
-            <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">Наше производство в деталях</h3>
-            <div className="relative">
-              <div className="flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-                <div className="flex animate-marquee whitespace-nowrap py-4">
-                  {[1, 2, 3, 4, 5, 6].map((item) => (
-                    <div key={item} className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0">
-                      <img 
-                        src={`/production/production-${item}.jpg`} 
-                        alt={`Производственный процесс ${item}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+  <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">
+    Этапы добычи мискантуса
+  </h3>
+  <div className="relative">
+    <div className="flex overflow-hidden">
+      <div className="flex animate-marquee whitespace-nowrap py-4">
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div
+            key={item}
+            className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
+          >
+            <img
+              src={`/production/production-${item}.jpg`}
+              alt={`Производственный процесс ${item}`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
           </div>
+        ))}
+
+        {/* Дубликат для бесконечной прокрутки */}
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div
+            key={`copy-${item}`}
+            className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
+          >
+            <img
+              src={`/production/production-${item}.jpg`}
+              alt={`Производственный процесс ${item}`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
             <div className="relative">

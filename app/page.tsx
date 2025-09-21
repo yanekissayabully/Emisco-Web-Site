@@ -19,7 +19,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url('/10.png')`,
+            backgroundImage: `url('/10.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -184,7 +184,7 @@ export default function HomePage() {
             <div className="relative animate-in slide-in-from-right-4 duration-1000 delay-300">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src="/1.png"
+                  src="/1.webp"
                   alt="Sustainable construction with Emisco blocks"
                   className="w-full h-auto"
                 />
@@ -204,7 +204,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
             <div className="order-2 lg:order-1 relative animate-in slide-in-from-left-4 duration-1000 delay-300">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
-                <img src="/2.png" alt="Miscanthus construction blocks" className="w-full h-auto" />
+                <img src="/2.webp" alt="Miscanthus construction blocks" className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
               </div>
               <div className="absolute -top-6 -left-6 w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-secondary to-primary rounded-full opacity-20 blur-xl"></div>
