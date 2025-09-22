@@ -450,7 +450,7 @@ export default function ProductionProcessPage() {
             className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
           >
             <img
-              src={`/production2/production-${item}.JPEG`}
+              src={`/production2/production-${item}.jpeg`}
               alt={`Производственный процесс ${item}`}
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
