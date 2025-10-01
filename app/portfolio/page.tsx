@@ -1225,8 +1225,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight, MapPin, Calendar, Star, Quote, Eye, X, ChevronLeft, ChevronRight, Play, Home, Building, School, Factory } from "lucide-react"
+import { ArrowRight, Eye, X, ChevronLeft, ChevronRight, Play } from "lucide-react"
 import Link from "next/link"
 import { useI18n } from "@/providers/i18n-providers"
 import TelegramModal from "@/components/TelegramModal"
@@ -1251,7 +1250,6 @@ export default function PortfolioPage() {
   const [isTelegramModalOpen, setIsTelegramModalOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState<ProjectMedia | null>(null);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  const [activeCategory, setActiveCategory] = useState('all');
 
   // Данные для проектов
   const projects: ProjectMedia[] = [
@@ -1291,15 +1289,11 @@ export default function PortfolioPage() {
         { type: 'image', url: '/5g.jpeg', alt: 'Sustainable Office Complex' },
         { type: 'image', url: '/6g.jpeg', alt: 'Office Interior' },
         { type: 'image', url: '/7g.jpeg', alt: 'Office Interior' },
+        { type: 'image', url: '/8g.jpeg', alt: 'Office Interior' },
         { type: 'video', url: '/v1.mp4', alt: 'Campus Tour' },
       ]
     },
   ];
-
-  // Фильтрация проектов по категории
-  const filteredProjects = activeCategory === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
 
   const openModal = (projectId: string) => {
     const project = projects.find(p => p.id === projectId);
@@ -1334,86 +1328,36 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">{t("portfolioTitle")}</h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
+            
+            {/* Стат встроен в заголовок */}
+            <div className="mb-8">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
+                {t("portfolioTitle")}
+              </h1>
+              
+              <div className="inline-flex items-baseline bg-white/70 backdrop-blur-sm rounded-full px-6 py-3 border border-primary/20 shadow-sm mb-2">
+                <span className="text-2xl font-black text-primary mr-2">45%</span>
+                <span className="text-lg text-muted-foreground">{t("portfolioStat3")}</span>
+              </div>
+            </div>
+
+            <p className="text-xl sm:text-2xl text-muted-foreground leading-relaxed">
               {t("portfolioSubtitle")}
             </p>
-          </div>
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl md:text-4xl font-serif font-black text-primary mb-2">150+</div>
-              <p className="text-muted-foreground">{t("portfolioStat1")}</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-serif font-black text-secondary mb-2">2.5M</div>
-              <p className="text-muted-foreground">{t("portfolioStat2")}</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-serif font-black text-primary mb-2">45%</div>
-              <p className="text-muted-foreground">{t("portfolioStat3")}</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-serif font-black text-secondary mb-2">98%</div>
-              <p className="text-muted-foreground">{t("portfolioStat4")}</p>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* Projects Grid with Filters */}
+      {/* Projects Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <Button
-              variant={activeCategory === 'all' ? 'default' : 'outline'}
-              onClick={() => setActiveCategory('all')}
-              className="rounded-full px-6"
-            >
-              {t('allProjects')}
-            </Button>
-            <Button
-              variant={activeCategory === 'residential' ? 'default' : 'outline'}
-              onClick={() => setActiveCategory('residential')}
-              className="rounded-full px-6"
-            >
-              <Home className="h-4 w-4 mr-2" />
-              {t('category1')}
-            </Button>
-            <Button
-              variant={activeCategory === 'commercial' ? 'default' : 'outline'}
-              onClick={() => setActiveCategory('commercial')}
-              className="rounded-full px-6"
-            >
-              <Building className="h-4 w-4 mr-2" />
-              {t('category2')}
-            </Button>
-            <Button
-              variant={activeCategory === 'institutional' ? 'default' : 'outline'}
-              onClick={() => setActiveCategory('institutional')}
-              className="rounded-full px-6"
-            >
-              <School className="h-4 w-4 mr-2" />
-              {t('category3')}
-            </Button>
-            <Button
-              variant={activeCategory === 'industrial' ? 'default' : 'outline'}
-              onClick={() => setActiveCategory('industrial')}
-              className="rounded-full px-6"
-            >
-              <Factory className="h-4 w-4 mr-2" />
-              {t('category4')}
-            </Button>
-          </div>
-
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <Card key={project.id} className="overflow-hidden group border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <div 
                   className="relative overflow-hidden cursor-pointer"
@@ -1442,9 +1386,6 @@ export default function PortfolioPage() {
                     {project.id === 'case-study-1' && t('caseDescr1Short')}
                     {project.id === 'case-study-2' && t('caseDescr2Short')}
                     {project.id === 'case-study-3' && t('caseDescr3Short')}
-                    {project.id === 'case-study-4' && t('caseDescr4Short')}
-                    {project.id === 'case-study-5' && t('caseDescr5Short')}
-                    {project.id === 'case-study-6' && t('caseDescr6Short')}
                   </p>
                   <Button 
                     onClick={() => openModal(project.id)}
@@ -1456,58 +1397,6 @@ export default function PortfolioPage() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Process Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">{t('processTitle')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('processSubtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-2xl font-bold text-primary">1</div>
-              </div>
-              <h3 className="font-serif font-bold mb-2">{t('processStep1')}</h3>
-              <p className="text-muted-foreground text-sm">
-                {t('processStep1Desc')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-2xl font-bold text-primary">2</div>
-              </div>
-              <h3 className="font-serif font-bold mb-2">{t('processStep2')}</h3>
-              <p className="text-muted-foreground text-sm">
-                {t('processStep2Desc')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-2xl font-bold text-primary">3</div>
-              </div>
-              <h3 className="font-serif font-bold mb-2">{t('processStep3')}</h3>
-              <p className="text-muted-foreground text-sm">
-                {t('processStep3Desc')}
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="text-2xl font-bold text-primary">4</div>
-              </div>
-              <h3 className="font-serif font-bold mb-2">{t('processStep4')}</h3>
-              <p className="text-muted-foreground text-sm">
-                {t('processStep4Desc')}
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -1541,153 +1430,148 @@ export default function PortfolioPage() {
       </section>
 
       {/* Модальное окно галереи */}
-{isModalOpen && currentProject && (
-  <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 lg:p-6">
-    <div className="relative w-full max-w-6xl max-h-[95vh] mx-auto flex flex-col">
-      
-      {/* Кнопка закрытия */}
-      <button
-        onClick={closeModal}
-        className="absolute -top-12 right-2 sm:right-0 z-50 p-3 bg-black/50 text-white rounded-full 
-                   hover:bg-black/70 transition-all duration-200 hover:scale-110 backdrop-blur-sm
-                   border border-white/20 shadow-lg"
-      >
-        <X className="h-6 w-6 sm:h-7 sm:w-7" />
-      </button>
-      
-      {/* Основной контейнер */}
-      <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full border border-white/20">
-        
-        {/* Заголовок и описание */}
-        <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border-b border-gray-200">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
-              {currentProject.title}
-            </h2>
-            <span className="text-xs sm:text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full 
-                            font-medium whitespace-nowrap self-start sm:self-auto">
-              {currentMediaIndex + 1} из {currentProject.media.length}
-            </span>
-          </div>
-          
-          {/* Описание проекта */}
-          <div className="max-h-16 sm:max-h-20 md:max-h-24 overflow-y-auto">
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed pr-2">
-              {currentProject.id === 'case-study-1' && t('caseDescr1')}
-              {currentProject.id === 'case-study-2' && t('caseDescr2')}
-              {currentProject.id === 'case-study-3' && t('caseDescr3')}
-              {currentProject.id === 'case-study-4' && t('caseDescr4Short')}
-              {currentProject.id === 'case-study-5' && t('caseDescr5Short')}
-              {currentProject.id === 'case-study-6' && t('caseDescr6Short')}
-            </p>
-          </div>
-        </div>
+      {isModalOpen && currentProject && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4 lg:p-6">
+          <div className="relative w-full max-w-6xl max-h-[95vh] mx-auto flex flex-col">
+            
+            {/* Кнопка закрытия */}
+            <button
+              onClick={closeModal}
+              className="absolute -top-12 right-2 sm:right-0 z-50 p-3 bg-black/50 text-white rounded-full 
+                         hover:bg-black/70 transition-all duration-200 hover:scale-110 backdrop-blur-sm
+                         border border-white/20 shadow-lg"
+            >
+              <X className="h-6 w-6 sm:h-7 sm:w-7" />
+            </button>
+            
+            {/* Основной контейнер */}
+            <div className="bg-white rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl flex flex-col h-full border border-white/20">
+              
+              {/* Заголовок и описание */}
+              <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border-b border-gray-200">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
+                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">
+                    {currentProject.title}
+                  </h2>
+                  <span className="text-xs sm:text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded-full 
+                                  font-medium whitespace-nowrap self-start sm:self-auto">
+                    {currentMediaIndex + 1} из {currentProject.media.length}
+                  </span>
+                </div>
+                
+                {/* Описание проекта */}
+                <div className="max-h-16 sm:max-h-20 md:max-h-24 overflow-y-auto">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed pr-2">
+                    {currentProject.id === 'case-study-1' && t('caseDescr1')}
+                    {currentProject.id === 'case-study-2' && t('caseDescr2')}
+                    {currentProject.id === 'case-study-3' && t('caseDescr3')}
+                  </p>
+                </div>
+              </div>
 
-        {/* Медиа контент */}
-        <div className="relative flex-1 bg-gray-900 flex items-center justify-center 
-                       min-h-[250px] sm:min-h-[350px] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden">
-          {currentProject.media[currentMediaIndex].type === 'image' ? (
-            <img
-              src={currentProject.media[currentMediaIndex].url}
-              alt={currentProject.media[currentMediaIndex].alt || currentProject.title}
-              className="w-auto h-full max-h-[70vh] object-contain"
-            />
-          ) : (
-            <video
-              src={currentProject.media[currentMediaIndex].url}
-              className="w-auto h-full max-h-[70vh] object-contain"
-              controls
-              autoPlay
-              muted
-              playsInline
-            />
-          )}
-
-          {/* Навигация по медиа */}
-          {currentProject.media.length > 1 && (
-            <>
-              <button
-                onClick={prevMedia}
-                className="absolute left-2 sm:left-4 lg:left-6 top-1/2 transform -translate-y-1/2 
-                         bg-black/60 text-white p-2 sm:p-3 lg:p-4 rounded-full hover:bg-black/80 
-                         transition-all duration-200 hover:scale-110 border border-white/20 shadow-lg"
-              >
-                <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
-              </button>
-              <button
-                onClick={nextMedia}
-                className="absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2 
-                         bg-black/60 text-white p-2 sm:p-3 lg:p-4 rounded-full hover:bg-black/80 
-                         transition-all duration-200 hover:scale-110 border border-white/20 shadow-lg"
-              >
-                <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
-              </button>
-            </>
-          )}
-        </div>
-
-        {/* Миниатюры и действия */}
-        <div className="p-2 sm:p-3 md:p-4 lg:p-5 bg-gray-50/90 backdrop-blur-sm">
-          <div className="flex gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2 sm:pb-3 md:pb-4">
-            {currentProject.media.map((media, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentMediaIndex(index)}
-                className={`flex-shrink-0 relative group transition-all duration-200 ${
-                  index === currentMediaIndex 
-                    ? 'ring-2 sm:ring-3 ring-primary ring-offset-1 sm:ring-offset-2 scale-105 shadow-md' 
-                    : 'opacity-70 hover:opacity-100 hover:scale-105'
-                }`}
-              >
-                {media.type === 'image' ? (
+              {/* Медиа контент */}
+              <div className="relative flex-1 bg-gray-900 flex items-center justify-center 
+                             min-h-[250px] sm:min-h-[350px] lg:min-h-[60vh] xl:min-h-[70vh] overflow-hidden">
+                {currentProject.media[currentMediaIndex].type === 'image' ? (
                   <img
-                    src={media.url}
-                    alt=""
-                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 object-cover rounded-lg"
+                    src={currentProject.media[currentMediaIndex].url}
+                    alt={currentProject.media[currentMediaIndex].alt || currentProject.title}
+                    className="w-auto h-full max-h-[70vh] object-contain"
                   />
                 ) : (
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-                    <Play className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </div>
+                  <video
+                    src={currentProject.media[currentMediaIndex].url}
+                    className="w-auto h-full max-h-[70vh] object-contain"
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                  />
                 )}
 
-                {media.type === 'video' && (
-                  <div className="absolute top-1 right-1 bg-black/80 text-white p-1 rounded">
-                    <Play className="h-2 w-2 sm:h-3 sm:w-3" />
-                  </div>
+                {/* Навигация по медиа */}
+                {currentProject.media.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevMedia}
+                      className="absolute left-2 sm:left-4 lg:left-6 top-1/2 transform -translate-y-1/2 
+                               bg-black/60 text-white p-2 sm:p-3 lg:p-4 rounded-full hover:bg-black/80 
+                               transition-all duration-200 hover:scale-110 border border-white/20 shadow-lg"
+                    >
+                      <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
+                    </button>
+                    <button
+                      onClick={nextMedia}
+                      className="absolute right-2 sm:right-4 lg:right-6 top-1/2 transform -translate-y-1/2 
+                               bg-black/60 text-white p-2 sm:p-3 lg:p-4 rounded-full hover:bg-black/80 
+                               transition-all duration-200 hover:scale-110 border border-white/20 shadow-lg"
+                    >
+                      <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
+                    </button>
+                  </>
                 )}
-              </button>
-            ))}
-          </div>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-3 border-t border-gray-300/50">
-            <Button 
-              onClick={closeModal}
-              variant="outline" 
-              size="lg"
-              className="flex-1 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold"
-            >
-              Закрыть
-            </Button>
-            <Button 
-              onClick={() => {
-                closeModal();
-                setTimeout(() => setIsTelegramModalOpen(true), 300);
-              }}
-              size="lg"
-              className="flex-1 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold bg-primary hover:bg-primary/90"
-            >
-              Обсудить проект
-            </Button>
+              {/* Миниатюры и действия */}
+              <div className="p-2 sm:p-3 md:p-4 lg:p-5 bg-gray-50/90 backdrop-blur-sm">
+                <div className="flex gap-2 sm:gap-3 md:gap-4 overflow-x-auto pb-2 sm:pb-3 md:pb-4">
+                  {currentProject.media.map((media, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentMediaIndex(index)}
+                      className={`flex-shrink-0 relative group transition-all duration-200 ${
+                        index === currentMediaIndex 
+                          ? 'ring-2 sm:ring-3 ring-primary ring-offset-1 sm:ring-offset-2 scale-105 shadow-md' 
+                          : 'opacity-70 hover:opacity-100 hover:scale-105'
+                      }`}
+                    >
+                      {media.type === 'image' ? (
+                        <img
+                          src={media.url}
+                          alt=""
+                          className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 object-cover rounded-lg"
+                        />
+                      ) : (
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-gray-200 rounded-lg flex items-center justify-center relative overflow-hidden">
+                          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+                          <Play className="h-4 w-4 sm:h-5 sm:w-5" />
+                        </div>
+                      )}
+
+                      {media.type === 'video' && (
+                        <div className="absolute top-1 right-1 bg-black/80 text-white p-1 rounded">
+                          <Play className="h-2 w-2 sm:h-3 sm:w-3" />
+                        </div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-3 border-t border-gray-300/50">
+                  <Button 
+                    onClick={closeModal}
+                    variant="outline" 
+                    size="lg"
+                    className="flex-1 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold"
+                  >
+                    Закрыть
+                  </Button>
+                  <Button 
+                    onClick={() => {
+                      closeModal();
+                      setTimeout(() => setIsTelegramModalOpen(true), 300);
+                    }}
+                    size="lg"
+                    className="flex-1 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-semibold bg-primary hover:bg-primary/90"
+                  >
+                    Обсудить проект
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-)}
-
-
+      )}
 
       {/* Модалка для заявки в Telegram */}
       <TelegramModal 

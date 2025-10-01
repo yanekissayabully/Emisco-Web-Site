@@ -476,7 +476,7 @@ export default function ServicesPage() {
               <CardContent className="pt-0">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   Work with our expert team to optimize your building design for maximum sustainability and performance
-                  using miscanthus blocks.
+                  using miscanthus blocks and panels.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center text-sm">
@@ -505,7 +505,7 @@ export default function ServicesPage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Reliable delivery of high-quality miscanthus blocks with flexible scheduling to meet your project
+                  Reliable delivery of high-quality miscanthus blocks and panels with flexible scheduling to meet your project
                   timeline and budget requirements.
                 </p>
                 <ul className="space-y-2 mb-6">
@@ -533,22 +533,21 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Wrench className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-xl font-serif">Installation Support</CardTitle>
+                <CardTitle className="text-xl font-serif">Installation</CardTitle>
               </CardHeader>
               <CardContent className="pt-0">
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  On-site technical assistance and training to ensure proper installation and optimal performance of
-                  your miscanthus block construction.
+                  Installation panels and blocks on site to ensure proper performance of your construction.
                 </p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                    On-site technical supervision
+                    On-site installation
                   </li>
-                  <li className="flex items-center text-sm">
+                  {/* <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
                     Contractor training programs
-                  </li>
+                  </li> */}
                   <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
                     Quality control inspections
@@ -571,10 +570,10 @@ export default function ServicesPage() {
                   and troubleshooting.
                 </p>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center text-sm">
+                  {/* <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-secondary mr-2 flex-shrink-0" />
                     24/7 technical helpline
-                  </li>
+                  </li> */}
                   <li className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-secondary mr-2 flex-shrink-0" />
                     Remote consultation services
@@ -620,7 +619,7 @@ export default function ServicesPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            {/* <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="text-center pb-4">
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FileText className="h-8 w-8 text-secondary" />
@@ -650,7 +649,7 @@ export default function ServicesPage() {
                   Learn More
                 </Button>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
@@ -709,7 +708,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Packages */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Service Packages</h2>
@@ -831,7 +830,7 @@ export default function ServicesPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
