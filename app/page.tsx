@@ -14,8 +14,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with enhanced overlay */}
+      {/* <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -28,7 +27,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60" />
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-black mb-6 sm:mb-8 leading-tight animate-in slide-in-from-bottom-4 duration-1000">
@@ -65,10 +63,46 @@ export default function HomePage() {
             <div className="w-1 h-2 sm:h-3 bg-white/70 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
           </div>
         </div>
-      </section>
+      </section> */}
 
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  {/* Hero Content */}
+  <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif font-black mb-6 sm:mb-8 leading-tight animate-in slide-in-from-bottom-4 duration-1000">
+      {t('heroTitle')}
+    </h1>
 
-      <StatsSection/>
+    <p className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-10 text-gray-200 max-w-4xl mx-auto leading-relaxed font-light animate-in slide-in-from-bottom-4 duration-1000 delay-500">
+      {t('heroSubtitle')}
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-in slide-in-from-bottom-4 duration-1000 delay-700">
+      <Button
+        asChild
+        size="lg"
+        className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+      >
+        <Link href="/product">
+          {t('learnMore')} <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+        </Link>
+      </Button>
+      <Button
+        asChild
+        variant="outline"
+        size="lg"
+        className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-white/10 border-white/40 text-white hover:bg-white/20 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+      >
+        <Link href="/about">{t('readMore')}</Link>
+      </Button>
+    </div>
+  </div>
+
+  <div className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div className="w-1 h-2 sm:h-3 bg-white/70 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
 
       {/* Features Section */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-white via-slate-50 to-white">

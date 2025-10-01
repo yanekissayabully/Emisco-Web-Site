@@ -22,9 +22,7 @@ export default function AboutPage() {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 {t('storyDescription2')}
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                {t('storyDescription3')}
-              </p>
+
             </div>
             <div className="relative">
               <img
