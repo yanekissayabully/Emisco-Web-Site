@@ -499,12 +499,6 @@ export default function ProductPage() {
                     {t("productButton1")} <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-3 bg-transparent">
-                  <Link href="#download">
-                    <Download className="mr-2 h-5 w-5" />
-                    {t("productButton2")}
-                  </Link>
-                </Button>
               </div>
             </div>
             <div className="relative">
@@ -542,12 +536,6 @@ export default function ProductPage() {
                 <Button asChild size="lg" className="text-lg px-8 py-3">
                   <Link href="#specifications">
                     {t("productButton1")} <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-3 bg-transparent">
-                  <Link href="#download">
-                    <Download className="mr-2 h-5 w-5" />
-                    {t("productButton2")}
                   </Link>
                 </Button>
               </div>
@@ -626,44 +614,43 @@ export default function ProductPage() {
 
     <Tabs defaultValue="thermal" className="w-full">
       <TabsList
-  className="
-    grid w-full gap-2 mb-8
-    grid-cols-2 sm:grid-cols-4
-  "
->
-  <TabsTrigger
-    value="thermal"
-    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
-  >
-    Thermische Werte
-  </TabsTrigger>
-  <TabsTrigger
-    value="structural"
-    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
-  >
-    Mechanische Werte
-  </TabsTrigger>
-  <TabsTrigger
-    value="environmental"
-    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
-  >
-    Bauphysik
-  </TabsTrigger>
-  <TabsTrigger
-    value="certifications"
-    className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
-  >
-    Prüfungen
-  </TabsTrigger>
-</TabsList>
-
+        className="
+          grid w-full gap-2 mb-8
+          grid-cols-2 sm:grid-cols-4
+        "
+      >
+        <TabsTrigger
+          value="thermal"
+          className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+        >
+          Thermische Werte
+        </TabsTrigger>
+        <TabsTrigger
+          value="structural"
+          className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+        >
+          Mechanische Werte
+        </TabsTrigger>
+        <TabsTrigger
+          value="environmental"
+          className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+        >
+          Bauphysik
+        </TabsTrigger>
+        <TabsTrigger
+          value="certifications"
+          className="w-full bg-gray-100 rounded-lg data-[state=active]:bg-gray-300"
+        >
+          Prüfungen
+        </TabsTrigger>
+      </TabsList>
 
       {/* Thermische Werte */}
       <TabsContent value="thermal">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Thermometer className="h-5 w-5 text-primary" />
+              <Thermometer className="h-5 w-5 text-green-600" />
               Thermische Eigenschaften
             </CardTitle>
           </CardHeader>
@@ -676,7 +663,9 @@ export default function ProductPage() {
                     <th className="p-2">Hanfsteine</th>
                     <th className="p-2">Diffutehrm</th>
                     <th className="p-2">M-ISOI</th>
-                    <th className="p-2">Emisco 101-0</th>
+                    <th className="p-2 bg-green-50 font-bold text-green-700 border-l-2 border-r-2 border-green-300">
+                      Emisco 101-0
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -685,28 +674,36 @@ export default function ProductPage() {
                     <td className="p-2">300</td>
                     <td className="p-2">190</td>
                     <td className="p-2">115,5</td>
-                    <td className="p-2">400</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      400
+                    </td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2 font-medium">Wärmeleitfähigkeit λ (W/mK)</td>
                     <td className="p-2">0.070</td>
                     <td className="p-2">0.043</td>
                     <td className="p-2">0.051</td>
-                    <td className="p-2">0.085</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      0.085
+                    </td>
                   </tr>
                   <tr className="border-b">
                     <td className="p-2 font-medium">Spez. Wärmekapazität (J/kgK)</td>
                     <td className="p-2">2100</td>
                     <td className="p-2">1244</td>
                     <td className="p-2">1087</td>
-                    <td className="p-2">–</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      –
+                    </td>
                   </tr>
                   <tr>
                     <td className="p-2 font-medium">μ-Wert</td>
                     <td className="p-2">5</td>
                     <td className="p-2">1,7</td>
                     <td className="p-2">3,67</td>
-                    <td className="p-2">–</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      –
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -720,7 +717,7 @@ export default function ProductPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Ruler className="h-5 w-5 text-primary" />
+              <Ruler className="h-5 w-5 text-green-600" />
               Mechanische Eigenschaften
             </CardTitle>
           </CardHeader>
@@ -733,7 +730,9 @@ export default function ProductPage() {
                     <th className="p-2">Hanfsteine</th>
                     <th className="p-2">Diffutehrm</th>
                     <th className="p-2">M-ISOI</th>
-                    <th className="p-2">Emisco 101-0</th>
+                    <th className="p-2 bg-green-50 font-bold text-green-700 border-l-2 border-r-2 border-green-300">
+                      Emisco 101-0
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -742,14 +741,18 @@ export default function ProductPage() {
                     <td className="p-2">70</td>
                     <td className="p-2">80</td>
                     <td className="p-2">121</td>
-                    <td className="p-2">536</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      536
+                    </td>
                   </tr>
                   <tr>
                     <td className="p-2 font-medium">Zugfestigkeit ⟂ (kPa)</td>
                     <td className="p-2">7,5</td>
                     <td className="p-2">10</td>
                     <td className="p-2">6,7</td>
-                    <td className="p-2">29,3</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      29,3
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -763,37 +766,97 @@ export default function ProductPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Leaf className="h-5 w-5 text-primary" />
+              <Leaf className="h-5 w-5 text-green-600" />
               Bauphysikalische Bewertung
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="list-disc pl-6 space-y-3">
-              <li>
-                Wärmeschutz: U = 0.17 W/(m²K) → 
-                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
-                  Sehr gut
-                </span>
-              </li>
-              <li>
-                Feuchteschutz: Tauwasser 455 g/m², Trocknungszeit 13 Tage, Holzfeuchte +0,1% → 
-                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
-                  Sehr gut
-                </span>
-              </li>
-              <li>
-                Hitzeschutz: Amplitudendämpfung &gt; 100, Wärmekapazität innen 96 kJ/m²K → 
-                <span className="ml-2 px-2 py-1 rounded-full text-white bg-green-600 text-xs">
-                  Sehr gut
-                </span>
-              </li>
-              <li>
-                Alternative Materialien (z. B. M-ISOI bei Feuchte) → 
-                <span className="ml-2 px-2 py-1 rounded-full text-white bg-red-600 text-xs">
-                  mangelhaft
-                </span>
-              </li>
-            </ul>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="p-2">Eigenschaft</th>
+                    <th className="p-2">Hanfsteine</th>
+                    <th className="p-2">Diffutehrm</th>
+                    <th className="p-2">M-ISOI</th>
+                    <th className="p-2 bg-green-50 font-bold text-green-700 border-l-2 border-r-2 border-green-300">
+                      Emisco 101-0
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Wärmeschutz</td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2 bg-green-50 border-l-2 border-r-2 border-green-200">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-700 text-xs font-semibold">
+                        Sehr gut
+                      </span>
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Feuchteschutz</td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-red-600 text-xs">
+                        mangelhaft
+                      </span>
+                    </td>
+                    <td className="p-2 bg-green-50 border-l-2 border-r-2 border-green-200">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-700 text-xs font-semibold">
+                        Sehr gut
+                      </span>
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-2 font-medium">Hitzeschutz</td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-600 text-xs">
+                        Sehr gut
+                      </span>
+                    </td>
+                    <td className="p-2 bg-green-50 border-l-2 border-r-2 border-green-200">
+                      <span className="px-2 py-1 rounded-full text-white bg-green-700 text-xs font-semibold">
+                        Sehr gut
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </CardContent>
         </Card>
       </TabsContent>
@@ -803,7 +866,7 @@ export default function ProductPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary" />
+              <CheckCircle className="h-5 w-5 text-green-600" />
               Prüfberichte & Klassifizierung
             </CardTitle>
           </CardHeader>
@@ -816,7 +879,9 @@ export default function ProductPage() {
                     <th className="p-2">Hanfsteine</th>
                     <th className="p-2">Diffutehrm</th>
                     <th className="p-2">M-ISOI</th>
-                    <th className="p-2">Emisco 101-0</th>
+                    <th className="p-2 bg-green-50 font-bold text-green-700 border-l-2 border-r-2 border-green-300">
+                      Emisco 101-0
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -825,12 +890,17 @@ export default function ProductPage() {
                     <td className="p-2">Klasse B-s1</td>
                     <td className="p-2">Klasse E</td>
                     <td className="p-2">Klasse e</td>
-                    <td className="p-2">Klasse B-s1</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      Klasse B-s1
+                    </td>
                   </tr>
                   <tr>
                     <td className="p-2 font-medium">Prüfinstitute</td>
-                    <td colSpan={4} className="p-2">
-                      EMPA, VKFZIP, TüV, M-Isol
+                    <td className="p-2">EMPA, VKFZIP</td>
+                    <td className="p-2">TüV</td>
+                    <td className="p-2">M-Isol</td>
+                    <td className="p-2 bg-green-50 font-semibold text-green-700 border-l-2 border-r-2 border-green-200">
+                      EMPA, VKFZIP
                     </td>
                   </tr>
                 </tbody>
@@ -890,57 +960,8 @@ export default function ProductPage() {
         </div>
       </section>
 
-      {/* Download Section */}
-      <section id="download" className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">{t('documentationTitle')}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('documentationSubtitle')}
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="font-serif font-bold mb-2">{t('docTitle1')}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{t('docDescr1')}</p>
-                <Button className="w-full">{t('docButton1')}</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="h-8 w-8 text-secondary" />
-                </div>
-                <h3 className="font-serif font-bold mb-2">{t('docTitle2')}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{t('docDescr2')}</p>
-                <Button className="w-full bg-transparent" variant="outline">
-                  {t('docButton2')}
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Download className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="font-serif font-bold mb-2">{t('docTitle3')}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{t('docDescr3')}</p>
-                <Button className="w-full bg-transparent" variant="outline">
-                  {t('docButton3')}
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
+    
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -636,6 +636,56 @@ export default function ProductionProcessPage() {
   </div>
 </div>
 
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">1</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Сбор урожая</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Сбор урожая в феврале-марте месяце, когда сборочная техника не требуется для других нужд, что значительно упрощает данную задачу. 
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">2</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Досушка</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Мискантус оставляется на досушку на некоторое время.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">3</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Упаковка</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Мискантус упаковывается либо в Bigbag по 400-500кг, либо в упаковки по 25 кг, все зависит от цели использования материала. 
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="text-2xl font-bold text-primary">4</div>
+                </div>
+                <h3 className="text-xl font-serif font-bold mb-4">Измельчение</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Мискантус проходит фазу измельчения до нужного размера чтобы его использовать в производстве строительных панелей и строительных блоков. 
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
             <div className="relative">
