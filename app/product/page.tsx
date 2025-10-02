@@ -503,7 +503,7 @@ export default function ProductPage() {
             </div>
             <div className="relative">
               <img
-                src="/product-showcase-blocks.png"
+                src="/product-showcase-blocks.webp"
                 alt="Emisco miscanthus construction blocks"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />
@@ -517,7 +517,7 @@ export default function ProductPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <img
-                src="/panels.png"
+                src="/panels.webp"
                 alt="Emisco miscanthus construction blocks"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />

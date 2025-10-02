@@ -26,7 +26,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <img
-                src="/first.jpg"
+                src="/first.webp"
                 alt="Emisco founding team"
                 className="rounded-lg shadow-2xl w-full h-auto"
               />

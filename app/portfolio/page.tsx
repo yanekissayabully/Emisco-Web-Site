@@ -1258,9 +1258,9 @@ export default function PortfolioPage() {
       title: t('caseTitle1'),
       category: 'residential',
       media: [
-        { type: 'image', url: '/3s.png', alt: 'Green Valley Housing Estate' },
-        { type: 'image', url: '/1s.jpg', alt: 'Green Valley Interior' },
-        { type: 'image', url: '/2s.jpg', alt: 'Green Valley Tour' },
+        { type: 'image', url: '/3s.webp', alt: 'Green Valley Housing Estate' },
+        { type: 'image', url: '/1s.webp', alt: 'Green Valley Interior' },
+        { type: 'image', url: '/2s.webp', alt: 'Green Valley Tour' },
       ]
     },
     {
@@ -1268,13 +1268,13 @@ export default function PortfolioPage() {
       title: t('caseTitle2'),
       category: 'residential',
       media: [
-        { type: 'image', url: '/g1.jpeg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/g2.jpeg', alt: 'Office Interior' },
-        { type: 'image', url: '/g3.jpeg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/g4.jpeg', alt: 'Office Interior' },
-        { type: 'image', url: '/g5.jpeg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/g6.jpeg', alt: 'Office Interior' },
-        { type: 'image', url: '/g7.jpeg', alt: 'Office Interior' },
+        { type: 'image', url: '/g1.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/g2.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/g3.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/g4.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/g5.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/g6.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/g7.webp', alt: 'Office Interior' },
       ]
     },
     {
@@ -1282,14 +1282,14 @@ export default function PortfolioPage() {
       title: t('caseTitle3'),
       category: 'residential',
       media: [
-        { type: 'image', url: '/1g.jpeg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/2g.jpg', alt: 'Office Interior' },
-        { type: 'image', url: '/3g.jpg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/4g.jpg', alt: 'Office Interior' },
-        { type: 'image', url: '/5g.jpeg', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/6g.jpeg', alt: 'Office Interior' },
-        { type: 'image', url: '/7g.jpeg', alt: 'Office Interior' },
-        { type: 'image', url: '/8g.jpeg', alt: 'Office Interior' },
+        { type: 'image', url: '/1g.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/2g.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/3g.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/4g.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/5g.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/6g.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/7g.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/8g.webp', alt: 'Office Interior' },
         { type: 'video', url: '/v1.mp4', alt: 'Campus Tour' },
       ]
     },
