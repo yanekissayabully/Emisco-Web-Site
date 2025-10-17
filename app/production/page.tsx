@@ -1,1542 +1,3 @@
-// "use client"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { ArrowRight, Factory, Settings, CheckSquare, Truck, Shield, Recycle, Zap } from "lucide-react"
-// import Link from "next/link"
-
-// export default function ProductionProcessPage() {
-//   return (
-//     <div className="min-h-screen">
-//       {/* Hero Section */}
-//       <section className="py-20 bg-gradient-to-br from-secondary/5 to-primary/5">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="max-w-4xl mx-auto text-center">
-//             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
-//               Как мы производим наши арболитовые панели
-//             </h1>
-//             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-//               Узнайте о нашем высокотехнологичном процессе производства, который превращает древесную щепу и цемент в инновационный строительный материал
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Production Steps Section */}
-//       <section className="py-20">
-//   <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//     <div className="text-center mb-16">
-//       <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Этапы производства</h2>
-//       <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//         От тщательного отбора сырья до контроля качества готовой продукции
-//       </p>
-//     </div>
-
-//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-//       <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//         <CardContent className="p-6 text-center">
-//           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//             <div className="text-2xl font-bold text-primary">1</div>
-//           </div>
-//           <h3 className="text-xl font-serif font-bold mb-4">Подготовка сырья</h3>
-//           <p className="text-muted-foreground text-sm leading-relaxed">
-//             Древесная щепа определенных пород дерева проходит калибровку и минерализацию для повышения адгезии с цементом
-//           </p>
-//         </CardContent>
-//       </Card>
-
-//       <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//         <CardContent className="p-6 text-center">
-//           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//             <div className="text-2xl font-bold text-primary">2</div>
-//           </div>
-//           <h3 className="text-xl font-serif font-bold mb-4">Смешивание</h3>
-//           <p className="text-muted-foreground text-sm leading-relaxed">
-//             Точное дозирование щепы, цемента и модифицирующих добавок в высокоскоростных смесителях
-//           </p>
-//         </CardContent>
-//       </Card>
-
-//       <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//         <CardContent className="p-6 text-center">
-//           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//             <div className="text-2xl font-bold text-primary">3</div>
-//           </div>
-//           <h3 className="text-xl font-serif font-bold mb-4">Формование</h3>
-//           <p className="text-muted-foreground text-sm leading-relaxed">
-//             Смесь уплотняется в формах под высоким давлением для достижения однородной плотности
-//           </p>
-//         </CardContent>
-//       </Card>
-
-//       <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//         <CardContent className="p-6 text-center">
-//           <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//             <div className="text-2xl font-bold text-primary">4</div>
-//           </div>
-//           <h3 className="text-xl font-serif font-bold mb-4">Сушка и отверждение</h3>
-//           <p className="text-muted-foreground text-sm leading-relaxed">
-//             Контролируемый процесс сушки в камерах с оптимальной температурой и влажностью
-//           </p>
-//         </CardContent>
-//       </Card>
-//     </div>
-
-//     {/* Видео процесса производства */}
-//     <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
-//       <div className="aspect-video bg-muted relative">
-//         <div className="absolute inset-0 flex items-center justify-center">
-//           <div className="text-center p-8">
-//             <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center cursor-pointer mx-auto mb-4 hover:bg-primary transition-colors" 
-//                  onClick={() => document.getElementById('production-video').classList.toggle('hidden')}>
-//               <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-//                 <path d="M8 5v14l11-7z" />
-//               </svg>
-//             </div>
-//             <p className="text-lg font-medium text-foreground">Посмотрите наш процесс производства</p>
-//           </div>
-//         </div>
-//         <div id="production-video" className="hidden absolute inset-0">
-//           <iframe 
-//             className="w-full h-full" 
-//             src="https://www.youtube.com/embed/RyIgqpwG9lM" 
-//             title="Процесс производства арболитовых панелей" 
-//             frameBorder="0" 
-//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-//             allowFullScreen>
-//           </iframe>
-//         </div>
-//       </div>
-//     </div>
-
-//     {/* Лента фотографий производства */}
-//     <div className="mb-16">
-//       <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">Наше производство в деталях</h3>
-//       <div className="relative">
-//         <div className="flex overflow-x-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-//           <div className="flex animate-marquee whitespace-nowrap py-4">
-//             {[1, 2, 3, 4, 5, 6].map((item) => (
-//               <div key={item} className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0">
-//                 <img 
-//                   src={`/production/production-${item}.jpg`} 
-//                   alt={`Производственный процесс ${item}`}
-//                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-//                 />
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-
-//     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
-//       <div className="relative">
-//         <div className="rounded-lg shadow-2xl overflow-hidden">
-//           <img
-//             src="/lupa2.jpeg"
-//             alt="Производственная линия арболитовых панелей"
-//             className="w-full h-auto transition-transform duration-700 hover:scale-105"
-//           />
-//         </div>
-//         <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
-//           <div className="text-3xl font-bold">15+ лет</div>
-//           <div className="text-sm">на рынке</div>
-//         </div>
-//       </div>
-//       <div>
-//         <h3 className="text-2xl font-serif font-black text-primary mb-6">Современное оборудование</h3>
-//         <p className="text-muted-foreground mb-6 leading-relaxed">
-//           Наше производство оснащено автоматизированными линиями европейского качества, 
-//           что обеспечивает стабильность характеристик каждой панели. Компьютеризированный 
-//           контроль всех параметров позволяет минимизировать человеческий фактор.
-//         </p>
-//         <ul className="space-y-3">
-//           <li className="flex items-center">
-//             <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//             <span>Автоматические дозаторы компонентов</span>
-//           </li>
-//           <li className="flex items-center">
-//             <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//             <span>Гидравлические прессы с ЧПУ</span>
-//           </li>
-//           <li className="flex items-center">
-//             <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//             <span>Климатические камеры для отверждения</span>
-//           </li>
-//           <li className="flex items-center">
-//             <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//             <span>Роботизированные линии упаковки</span>
-//           </li>
-//         </ul>
-        
-//         {/* Интерактивная статистика */}
-//         <div className="grid grid-cols-2 gap-4 mt-8">
-//           <div className="bg-muted p-4 rounded-lg text-center">
-//             <div className="text-2xl font-bold text-primary">500+</div>
-//             <div className="text-sm text-muted-foreground">панелей в день</div>
-//           </div>
-//           <div className="bg-muted p-4 rounded-lg text-center">
-//             <div className="text-2xl font-bold text-primary">98%</div>
-//             <div className="text-sm text-muted-foreground">соответствие стандартам</div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-  
-//   <style jsx>{`
-//     @keyframes marquee {
-//       0% { transform: translateX(0); }
-//       100% { transform: translateX(-50%); }
-//     }
-//     .animate-marquee {
-//       animation: marquee 30s linear infinite;
-//     }
-//   `}</style>
-// </section>
-
-//       {/* Quality Control Section */}
-//       <section className="py-20 bg-muted/50">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Контроль качества</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Многоступенчатая система проверки на каждом этапе производства
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Settings className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Входной контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Проверка каждой партии сырья: фракционный состав щепы, марка цемента, активность добавок
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Factory className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Операционный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Постоянный мониторинг параметров на всех этапах: влажность, плотность, время смешивания
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <CheckSquare className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Приёмочный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Испытания готовой продукции на прочность, теплопроводность, влажность и геометрию
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-
-//           <div className="mt-16 bg-card p-8 rounded-lg shadow-lg">
-//             <h3 className="text-2xl font-serif font-black text-primary mb-6 text-center">Испытательная лаборатория</h3>
-//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-//               <div>
-//                 <p className="text-muted-foreground mb-6 leading-relaxed">
-//                   На собственном испытательном центре мы проводим регулярные тесты продукции:
-//                 </p>
-//                 <ul className="space-y-3">
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Испытания на прочность при сжатии и изгибе</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Определение коэффициента теплопроводности</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Тесты на морозостойкость и влагопоглощение</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Огневые испытания на пожаробезопасность</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Акустические tests для оценки звукоизоляции</span>
-//                   </li>
-//                 </ul>
-//               </div>
-//               <div className="relative">
-//                 <img
-//                   src="/laba.jpg"
-//                   alt="Испытательная лаборатория"
-//                   className="rounded-lg shadow-xl w-full h-auto"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Advantages Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Преимущества нашего производства</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Технологии, которые делают наши арболитовые панели лучше
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Zap className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Энергоэффективность</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Процесс производства требует на 70% меньше энергии compared to traditional concrete blocks
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Recycle className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Безотходное производство</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Все обрезки и брак перерабатываются и возвращаются в производственный цикл
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Shield className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Стабильное качество</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Автоматизация обеспечивает одинаковые характеристики каждой партии продукции
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Certificates Section */}
-//       <section className="py-20 bg-primary text-primary-foreground">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black mb-4">Сертификаты и соответствие</h2>
-//             <p className="text-xl max-w-2xl mx-auto opacity-90">
-//               Наша продукция соответствует всем требованиям российских и международных стандартов
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ГОСТ</div>
-//               <p className="text-sm opacity-80">19222-84</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">СТО</div>
-//               <p className="text-sm opacity-80">96557188-001-2021</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">Ф
-//               <div className="text-3xl font-bold mb-2">ISO</div>
-//               <p className="text-sm opacity-80">14001:2015</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ФЗ</div>
-//               <p className="text-sm opacity-80">№ 123-ФЗ</p>
-//             </div>
-//           </div>
-
-//           <div className="text-center">
-//             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-//               Все наши арболитовые панели имеют технические свидетельства, сертификаты пожарной безопасности и санитарно-эпидемиологические заключения.
-//             </p>
-//             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-3">
-//               <Link href="/certificates">
-//                 Посмотреть сертификаты <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-6">Узнайте больше о нашей продукции</h2>
-//           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-//             Изучите технические характеристики и возможности применения наших арболитовых панелей
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <Button asChild size="lg" className="text-lg px-8 py-3">
-//               <Link href="/product">
-//                 Технические характеристики <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//             <Button asChild size="lg" variant="outline" className="text-lg px-8 py-3">
-//               <Link href="/contact">Запросить консультацию</Link>
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   )
-// }
-
-
-
-
-
-// 'use client'
-// import { useState } from 'react';
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { ArrowRight, Factory, Settings, CheckSquare, Truck, Shield, Recycle, Zap } from "lucide-react"
-// import Link from "next/link"
-// import TelegramModal from "@/components/TelegramModal"
-
-// export default function ProductionProcessPage() {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   return (
-//     <div className="min-h-screen">
-//       {/* Hero Section */}
-//       <section className="py-20 bg-gradient-to-br from-secondary/5 to-primary/5">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="max-w-4xl mx-auto text-center">
-//             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
-//               Как мы производим наши арболитовые панели
-//             </h1>
-//             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-//               Узнайте о нашем высокотехнологичном процессе производства, который превращает древесную щепу и цемент в инновационный строительный материал
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Production Steps Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Этапы производства</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               От тщательного отбора сырья до контроля качества готовой продукции
-//             </p>
-//           </div>
-
-// <div className="mb-16">
-//   <div className="relative">
-//     <div className="flex overflow-hidden">
-//       <div className="flex animate-marquee whitespace-nowrap py-4">
-//         {[7, 8, 9, 10, 11, 12].map((item) => (
-//           <div
-//             key={item}
-//             className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
-//           >
-//             <img
-//               src={`/production2/production-${item}.webp`}
-//               alt={`Производственный процесс ${item}`}
-//               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-//             />
-//           </div>
-//         ))}
-//         {/* Дубликат для бесконечной прокрутки */}
-//         {[7, 8, 9, 10, 11, 12].map((item) => (
-//           <div
-//             key={`copy-${item}`}
-//             className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
-//           >
-//             <img
-//               src={`/production2/production-${item}.webp`}
-//               alt={`Производственный процесс ${item}`}
-//               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-//             />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">1</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Подготовка деревянного каркаса</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   В начале процесса формируется деревянный каркас. Он служит основой и придаёт будущей панели статическую прочность, обеспечивая стабильность конструкции на долгие годы.
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">2</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Измельчение мискантуса</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Стебли мискантуса перерабатываются в щепу и доводятся до оптимального размера. Такая структура позволяет материалу лучше связываться с цементирующим компонентом.
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">3</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Создание смеси</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Щепа мискантуса тщательно перемешивается с водой и 10% бетона. В итоге получается экологичный состав, где 90% натурального сырья и лишь 10% связующего материала.
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">4</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Формование панели</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Готовая смесь заливается в деревянный каркас, установленный на формировочном столе. Каждый миллиметр тщательно заполняется материалом.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">5</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Уплотнение</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Смесь аккуратно утрамбовывается внутри каркаса. Это позволяет устранить все пустоты и гарантирует равномерную плотность панели.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">6</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Горизонтальная сушка</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Формы с панелями выдерживаются в горизонтальном положении на протяжении 7 дней для первичного высыхания.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">7</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Вертикальная досушка</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   После этого панели устанавливаются вертикально и проходят завершающий этап сушки. Полный цикл составляет 21 день.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">8</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Готовность к монтажу</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   По завершении цикла панель полностью готова к установке. На строительной площадке она монтируется с помощью крана и соединяется специальными винтами, образуя надёжные и долговечные стены.
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-
-
-//           {/* Видео процесса производства */}
-//           <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
-//             <div className="aspect-video bg-muted relative">
-//               <div className="absolute inset-0 flex items-center justify-center">
-//                 <div className="text-center p-8">
-//                   <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center cursor-pointer mx-auto mb-4 hover:bg-primary transition-colors" 
-//                        onClick={() => document.getElementById('production-video').classList.toggle('hidden')}>
-//                     <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-//                       <path d="M8 5v14l11-7z" />
-//                     </svg>
-//                   </div>
-//                   <p className="text-lg font-medium text-foreground">Посмотрите наш процесс производства</p>
-//                 </div>
-//               </div>
-//               <div id="production-video" className="hidden absolute inset-0">
-//                 <iframe 
-//                   className="w-full h-full" 
-//                   src="https://www.youtube.com/embed/RyIgqpwG9lM" 
-//                   title="Процесс производства арболитовых панелей" 
-//                   frameBorder="0" 
-//                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-//                   allowFullScreen>
-//                 </iframe>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Лента фотографий производства */}
-//           <div className="mb-16">
-//   <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">
-//     Этапы добычи мискантуса
-//   </h3>
-//   <div className="relative">
-//     <div className="flex overflow-hidden">
-//       <div className="flex animate-marquee whitespace-nowrap py-4">
-//         {[1, 2, 3, 4, 5, 6].map((item) => (
-//           <div
-//             key={item}
-//             className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
-//           >
-//             <img
-//               src={`/production/production-${item}.webp`}
-//               alt={`Производственный процесс ${item}`}
-//               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-//             />
-//           </div>
-//         ))}
-
-//         {/* Дубликат для бесконечной прокрутки */}
-//         {[1, 2, 3, 4, 5, 6].map((item) => (
-//           <div
-//             key={`copy-${item}`}
-//             className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0"
-//           >
-//             <img
-//               src={`/production/production-${item}.webp`}
-//               alt={`Производственный процесс ${item}`}
-//               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-//             />
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   </div>
-// </div>
-
-// <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">1</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Сбор урожая</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Сбор урожая в феврале-марте месяце, когда сборочная техника не требуется для других нужд, что значительно упрощает данную задачу. 
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">2</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Досушка</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Мискантус оставляется на досушку на некоторое время.
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">3</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Упаковка</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Мискантус упаковывается либо в Bigbag по 400-500кг, либо в упаковки по 25 кг, все зависит от цели использования материала. 
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                   <div className="text-2xl font-bold text-primary">4</div>
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Измельчение</h3>
-//                 <p className="text-muted-foreground text-sm leading-relaxed">
-//                   Мискантус проходит фазу измельчения до нужного размера чтобы его использовать в производстве строительных панелей и строительных блоков. 
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-
-
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
-//             <div className="relative">
-//               <div className="rounded-lg shadow-2xl overflow-hidden">
-//                 <img
-//                   src="/lupa2.webp"
-//                   alt="Производственная линия арболитовых панелей"
-//                   className="w-full h-auto transition-transform duration-700 hover:scale-105"
-//                 />
-//               </div>
-//               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
-//                 <div className="text-3xl font-bold">15+ лет</div>
-//                 <div className="text-sm">на рынке</div>
-//               </div>
-//             </div>
-//             <div>
-//               <h3 className="text-2xl font-serif font-black text-primary mb-6">Современное оборудование</h3>
-//               <p className="text-muted-foreground mb-6 leading-relaxed">
-//                 Наше производство оснащено автоматизированными линиями европейского качества, 
-//                 что обеспечивает стабильность характеристик каждой панели. Компьютеризированный 
-//                 контроль всех параметров позволяет минимизировать человеческий фактор.
-//               </p>
-//               <ul className="space-y-3">
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Автоматические дозаторы компонентов</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Гидравлические прессы с ЧПУ</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Климатические камеры для отверждения</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Роботизированные линии упаковки</span>
-//                 </li>
-//               </ul>
-              
-//               {/* Интерактивная статистика */}
-//               <div className="grid grid-cols-2 gap-4 mt-8">
-//                 <div className="bg-muted p-4 rounded-lg text-center">
-//                   <div className="text-2xl font-bold text-primary">500+</div>
-//                   <div className="text-sm text-muted-foreground">панелей в день</div>
-//                 </div>
-//                 <div className="bg-muted p-4 rounded-lg text-center">
-//                   <div className="text-2xl font-bold text-primary">98%</div>
-//                   <div className="text-sm text-muted-foreground">соответствие стандартам</div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-        
-//         <style jsx>{`
-//           @keyframes marquee {
-//             0% { transform: translateX(0); }
-//             100% { transform: translateX(-50%); }
-//           }
-//           .animate-marquee {
-//             animation: marquee 30s linear infinite;
-//           }
-//         `}</style>
-//       </section>
-
-//       {/* Quality Control Section */}
-//       <section className="py-20 bg-muted/50">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Контроль качества</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Многоступенчатая система проверки на каждом этапе производства
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Settings className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Входной контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Проверка каждой партии сырья: фракционный состав щепы, марка цемента, активность добавок
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Factory className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Операционный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Постоянный мониторинг параметров на всех этапах: влажность, плотность, время смешивания
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <CheckSquare className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Приёмочный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Испытания готовой продукции на прочность, теплопроводность, влажность и геометрию
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-
-//           <div className="mt-16 bg-card p-8 rounded-lg shadow-lg">
-//             <h3 className="text-2xl font-serif font-black text-primary mb-6 text-center">Испытательная лаборатория</h3>
-//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-//               <div>
-//                 <p className="text-muted-foreground mb-6 leading-relaxed">
-//                   На собственном испытательном центре мы проводим регулярные тесты продукции:
-//                 </p>
-//                 <ul className="space-y-3">
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Испытания на прочность при сжатии и изгибе</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Определение коэффициента теплопроводности</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Тесты на морозостойкость и влагопоглощение</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Огневые испытания на пожаробезопасность</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Акустические tests для оценки звукоизоляции</span>
-//                   </li>
-//                 </ul>
-//               </div>
-//               <div className="relative">
-//                 <img
-//                   src="/laba.webp"
-//                   alt="Испытательная лаборатория"
-//                   className="rounded-lg shadow-xl w-full h-auto"
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Advantages Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Преимущества нашего производства</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Технологии, которые делают наши арболитовые панели лучше
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Zap className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Энергоэффективность</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Процесс производства требует на 70% меньше энергии compared to traditional concrete blocks
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Recycle className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Безотходное производство</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Все обрезки и брак перерабатываются и возвращаются в производственный цикл
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Shield className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Стабильное качество</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Автоматизация обеспечивает одинаковые характеристики каждой партии продукции
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Certificates Section */}
-//       <section className="py-20 bg-primary text-primary-foreground">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black mb-4">Сертификаты и соответствие</h2>
-//             <p className="text-xl max-w-2xl mx-auto opacity-90">
-//               Наша продукция соответствует всем требованиям российских и международных стандартов
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ГОСТ</div>
-//               <p className="text-sm opacity-80">19222-84</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">СТО</div>
-//               <p className="text-sm opacity-80">96557188-001-2021</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ISO</div>
-//               <p className="text-sm opacity-80">14001:2015</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ФЗ</div>
-//               <p className="text-sm opacity-80">№ 123-ФЗ</p>
-//             </div>
-//           </div>
-
-//           <div className="text-center">
-//             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-//               Все наши арболитовые панели имеют технические свидетельства, сертификаты пожарной безопасности и санитарно-эпидемиологические заключения.
-//             </p>
-//             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-3">
-//               <Link href="/certificates">
-//                 Посмотреть сертификаты <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-6">Узнайте больше о нашей продукции</h2>
-//           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-//             Изучите технические характеристики и возможности применения наших арболитовых панелей
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <Button asChild size="lg" className="text-lg px-8 py-3">
-//               <Link href="/product">
-//                 Технические характеристики <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//             <Button 
-//               size="lg" 
-//               variant="outline" 
-//               className="text-lg px-8 py-3"
-//               onClick={() => setIsModalOpen(true)}
-//             >
-//               Запросить консультацию
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Модалка для заявки */}
-//       <TelegramModal 
-//         isOpen={isModalOpen} 
-//         onClose={() => setIsModalOpen(false)} 
-//       />
-//     </div>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-// 'use client'
-// import { useState } from 'react';
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent } from "@/components/ui/card"
-// import { ArrowRight, Factory, Settings, CheckSquare, Truck, Shield, Recycle, Zap } from "lucide-react"
-// import Link from "next/link"
-// import TelegramModal from "@/components/TelegramModal"
-// import Image from 'next/image'
-
-// export default function ProductionProcessPage() {
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-//   const [showVideo, setShowVideo] = useState(false);
-
-//   // Функция для безопасной загрузки изображений
-//   const getImagePath = (basePath: string, index: number) => {
-//     return `${basePath}-${index}.webp`;
-//   };
-
-//   return (
-//     <div className="min-h-screen">
-//       {/* Hero Section */}
-//       <section className="py-20 bg-gradient-to-br from-secondary/5 to-primary/5">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="max-w-4xl mx-auto text-center">
-//             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
-//               Как мы производим наши арболитовые панели
-//             </h1>
-//             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-//               Узнайте о нашем высокотехнологичном процессе производства, который превращает древесную щепу и цемент в инновационный строительный материал
-//             </p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Production Steps Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Этапы производства</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               От тщательного отбора сырья до контроля качества готовой продукции
-//             </p>
-//           </div>
-
-//           {/* Лента фотографий производства - часть 1 */}
-//           <div className="mb-16">
-//             <div className="relative">
-//               <div className="flex overflow-hidden">
-//                 <div className="flex animate-marquee whitespace-nowrap py-4">
-//                   {[7, 8, 9, 10, 11, 12].map((item) => (
-//                     <div
-//                       key={item}
-//                       className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative"
-//                     >
-//                       <Image
-//                         src={getImagePath("/production2/production", item)}
-//                         alt={`Производственный процесс ${item}`}
-//                         className="object-cover hover:scale-105 transition-transform duration-700"
-//                         fill
-//                         sizes="320px"
-//                         placeholder="blur"
-//                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                       />
-//                     </div>
-//                   ))}
-//                   {/* Дубликат для бесконечной прокрутки */}
-//                   {[7, 8, 9, 10, 11, 12].map((item) => (
-//                     <div
-//                       key={`copy-${item}`}
-//                       className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative"
-//                     >
-//                       <Image
-//                         src={getImagePath("/production2/production", item)}
-//                         alt={`Производственный процесс ${item}`}
-//                         className="object-cover hover:scale-105 transition-transform duration-700"
-//                         fill
-//                         sizes="320px"
-//                         placeholder="blur"
-//                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                       />
-//                     </div>
-//                   ))}
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Карточки этапов производства */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-//             {[
-//               {
-//                 step: 1,
-//                 title: "Подготовка деревянного каркаса",
-//                 description: "В начале процесса формируется деревянный каркас. Он служит основой и придаёт будущей панели статическую прочность, обеспечивая стабильность конструкции на долгие годы."
-//               },
-//               {
-//                 step: 2,
-//                 title: "Измельчение мискантуса",
-//                 description: "Стебли мискантуса перерабатываются в щепу и доводятся до оптимального размера. Такая структура позволяет материалу лучше связываться с цементирующим компонентом."
-//               },
-//               {
-//                 step: 3,
-//                 title: "Создание смеси",
-//                 description: "Щепа мискантуса тщательно перемешивается с водой и 10% бетона. В итоге получается экологичный состав, где 90% натурального сырья и лишь 10% связующего материала."
-//               },
-//               {
-//                 step: 4,
-//                 title: "Формование панели",
-//                 description: "Готовая смесь заливается в деревянный каркас, установленный на формировочном столе. Каждый миллиметр тщательно заполняется материалом."
-//               },
-//               {
-//                 step: 5,
-//                 title: "Уплотнение",
-//                 description: "Смесь аккуратно утрамбовывается внутри каркаса. Это позволяет устранить все пустоты и гарантирует равномерную плотность панели."
-//               },
-//               {
-//                 step: 6,
-//                 title: "Горизонтальная сушка",
-//                 description: "Формы с панелями выдерживаются в горизонтальном положении на протяжении 7 дней для первичного высыхания."
-//               },
-//               {
-//                 step: 7,
-//                 title: "Вертикальная досушка",
-//                 description: "После этого панели устанавливаются вертикально и проходят завершающий этап сушки. Полный цикл составляет 21 день."
-//               },
-//               {
-//                 step: 8,
-//                 title: "Готовность к монтажу",
-//                 description: "По завершении цикла панель полностью готова к установке. На строительной площадке она монтируется с помощью крана и соединяется специальными винтами, образуя надёжные и долговечные стены."
-//               }
-//             ].map((item) => (
-//               <Card key={item.step} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//                 <CardContent className="p-6 text-center">
-//                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                     <div className="text-2xl font-bold text-primary">{item.step}</div>
-//                   </div>
-//                   <h3 className="text-xl font-serif font-bold mb-4">{item.title}</h3>
-//                   <p className="text-muted-foreground text-sm leading-relaxed">
-//                     {item.description}
-//                   </p>
-//                 </CardContent>
-//               </Card>
-//             ))}
-//           </div>
-
-//           {/* Видео процесса производства */}
-//           <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
-//             <div className="aspect-video bg-muted relative">
-//               {!showVideo ? (
-//                 <div className="absolute inset-0 flex items-center justify-center cursor-pointer" 
-//                      onClick={() => setShowVideo(true)}>
-//                   <div className="text-center p-8">
-//                     <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center hover:bg-primary transition-colors mx-auto mb-4">
-//                       <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-//                         <path d="M8 5v14l11-7z" />
-//                       </svg>
-//                     </div>
-//                     <p className="text-lg font-medium text-foreground">Посмотрите наш процесс производства</p>
-//                   </div>
-//                 </div>
-//               ) : (
-//                 <div className="absolute inset-0">
-//                   <iframe 
-//                     className="w-full h-full" 
-//                     src="https://www.youtube.com/embed/RyIgqpwG9lM" 
-//                     title="Процесс производства арболитовых панелей" 
-//                     frameBorder="0" 
-//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-//                     allowFullScreen
-//                     loading="lazy"
-//                   />
-//                 </div>
-//               )}
-//             </div>
-//           </div>
-
-//           {/* Лента фотографий добычи мискантуса */}
-//           <div className="mb-16">
-//             <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">
-//               Этапы добычи мискантуса
-//             </h3>
-//             <div className="relative">
-//               <div className="flex overflow-hidden">
-//                 <div className="flex animate-marquee whitespace-nowrap py-4">
-//                   {[1, 2, 3, 4, 5, 6].map((item) => (
-//                     <div
-//                       key={item}
-//                       className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative"
-//                     >
-//                       <Image
-//                         src={getImagePath("/production/production", item)}
-//                         alt={`Добыча мискантуса этап ${item}`}
-//                         className="object-cover hover:scale-105 transition-transform duration-700"
-//                         fill
-//                         sizes="320px"
-//                         placeholder="blur"
-//                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                       />
-//                     </div>
-//                   ))}
-//                   {/* Дубликат для бесконечной прокрутки */}
-//                   {[1, 2, 3, 4, 5, 6].map((item) => (
-//                     <div
-//                       key={`copy-${item}`}
-//                       className="mx-2 w-80 h-56 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative"
-//                     >
-//                       <Image
-//                         src={getImagePath("/production/production", item)}
-//                         alt={`Добыча мискантуса этап ${item}`}
-//                         className="object-cover hover:scale-105 transition-transform duration-700"
-//                         fill
-//                         sizes="320px"
-//                         placeholder="blur"
-//                         blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                       />
-//                     </div>
-//                   ))}
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Карточки этапов добычи */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-//             {[
-//               {
-//                 step: 1,
-//                 title: "Сбор урожая",
-//                 description: "Сбор урожая в феврале-марте месяце, когда сборочная техника не требуется для других нужд, что значительно упрощает данную задачу."
-//               },
-//               {
-//                 step: 2,
-//                 title: "Досушка",
-//                 description: "Мискантус оставляется на досушку на некоторое время."
-//               },
-//               {
-//                 step: 3,
-//                 title: "Упаковка",
-//                 description: "Мискантус упаковывается либо в Bigbag по 400-500кг, либо в упаковки по 25 кг, все зависит от цели использования материала."
-//               },
-//               {
-//                 step: 4,
-//                 title: "Измельчение",
-//                 description: "Мискантус проходит фазу измельчения до нужного размера чтобы его использовать в производстве строительных панелей и строительных блоков."
-//               }
-//             ].map((item) => (
-//               <Card key={item.step} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-//                 <CardContent className="p-6 text-center">
-//                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
-//                     <div className="text-2xl font-bold text-primary">{item.step}</div>
-//                   </div>
-//                   <h3 className="text-xl font-serif font-bold mb-4">{item.title}</h3>
-//                   <p className="text-muted-foreground text-sm leading-relaxed">
-//                     {item.description}
-//                   </p>
-//                 </CardContent>
-//               </Card>
-//             ))}
-//           </div>
-
-//           {/* Оборудование */}
-//           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
-//             <div className="relative">
-//               <div className="rounded-lg shadow-2xl overflow-hidden">
-//                 <Image
-//                   src="/lupa2.webp"
-//                   alt="Производственная линия арболитовых панелей"
-//                   width={600}
-//                   height={400}
-//                   className="w-full h-auto transition-transform duration-700 hover:scale-105"
-//                   priority
-//                   placeholder="blur"
-//                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                 />
-//               </div>
-//               <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-lg shadow-lg">
-//                 <div className="text-3xl font-bold">15+ лет</div>
-//                 <div className="text-sm">на рынке</div>
-//               </div>
-//             </div>
-//             <div>
-//               <h3 className="text-2xl font-serif font-black text-primary mb-6">Современное оборудование</h3>
-//               <p className="text-muted-foreground mb-6 leading-relaxed">
-//                 Наше производство оснащено автоматизированными линиями европейского качества, 
-//                 что обеспечивает стабильность характеристик каждой панели. Компьютеризированный 
-//                 контроль всех параметров позволяет минимизировать человеческий фактор.
-//               </p>
-//               <ul className="space-y-3">
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Автоматические дозаторы компонентов</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Гидравлические прессы с ЧПУ</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Климатические камеры для отверждения</span>
-//                 </li>
-//                 <li className="flex items-center">
-//                   <CheckSquare className="h-5 w-5 text-primary mr-2" />
-//                   <span>Роботизированные линии упаковки</span>
-//                 </li>
-//               </ul>
-              
-//               {/* Интерактивная статистика */}
-//               <div className="grid grid-cols-2 gap-4 mt-8">
-//                 <div className="bg-muted p-4 rounded-lg text-center">
-//                   <div className="text-2xl font-bold text-primary">500+</div>
-//                   <div className="text-sm text-muted-foreground">панелей в день</div>
-//                 </div>
-//                 <div className="bg-muted p-4 rounded-lg text-center">
-//                   <div className="text-2xl font-bold text-primary">98%</div>
-//                   <div className="text-sm text-muted-foreground">соответствие стандартам</div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-        
-//         <style jsx>{`
-//           @keyframes marquee {
-//             0% { transform: translateX(0); }
-//             100% { transform: translateX(-50%); }
-//           }
-//           .animate-marquee {
-//             animation: marquee 30s linear infinite;
-//           }
-//         `}</style>
-//       </section>
-
-//       {/* Остальные секции остаются без изменений */}
-//       {/* Quality Control Section */}
-//       <section className="py-20 bg-muted/50">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Контроль качества</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Многоступенчатая система проверки на каждом этапе производства
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Settings className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Входной контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Проверка каждой партии сырья: фракционный состав щепы, марка цемента, активность добавок
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <Factory className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Операционный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Постоянный мониторинг параметров на всех этапах: влажность, плотность, время смешивания
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg">
-//               <CardContent className="p-6 text-center">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-//                   <CheckSquare className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Приёмочный контроль</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Испытания готовой продукции на прочность, теплопроводность, влажность и геометрию
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-
-//           <div className="mt-16 bg-card p-8 rounded-lg shadow-lg">
-//             <h3 className="text-2xl font-serif font-black text-primary mb-6 text-center">Испытательная лаборатория</h3>
-//             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-//               <div>
-//                 <p className="text-muted-foreground mb-6 leading-relaxed">
-//                   На собственном испытательном центре мы проводим регулярные тесты продукции:
-//                 </p>
-//                 <ul className="space-y-3">
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Испытания на прочность при сжатии и изгибе</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Определение коэффициента теплопроводности</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Тесты на морозостойкость и влагопоглощение</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Огневые испытания на пожаробезопасность</span>
-//                   </li>
-//                   <li className="flex items-center">
-//                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-//                     <span>Акустические tests для оценки звукоизоляции</span>
-//                   </li>
-//                 </ul>
-//               </div>
-//               <div className="relative">
-//                 <Image
-//                   src="/laba.webp"
-//                   alt="Испытательная лаборатория"
-//                   width={500}
-//                   height={350}
-//                   className="rounded-lg shadow-xl w-full h-auto"
-//                   placeholder="blur"
-//                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaUMk6WUuey6o2mg+JpX6HFBpw6kY//2Q=="
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Advantages Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Преимущества нашего производства</h2>
-//             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-//               Технологии, которые делают наши арболитовые панели лучше
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Zap className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Энергоэффективность</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Процесс производства требует на 70% меньше энергии compared to traditional concrete blocks
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Recycle className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Безотходное производство</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Все обрезки и брак перерабатываются и возвращаются в производственный цикл
-//                 </p>
-//               </CardContent>
-//             </Card>
-
-//             <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <CardContent className="p-6">
-//                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-//                   <Shield className="h-8 w-8 text-primary" />
-//                 </div>
-//                 <h3 className="text-xl font-serif font-bold mb-4">Стабильное качество</h3>
-//                 <p className="text-muted-foreground text-sm">
-//                   Автоматизация обеспечивает одинаковые характеристики каждой партии продукции
-//                 </p>
-//               </CardContent>
-//             </Card>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Certificates Section */}
-//       <section className="py-20 bg-primary text-primary-foreground">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="text-center mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-serif font-black mb-4">Сертификаты и соответствие</h2>
-//             <p className="text-xl max-w-2xl mx-auto opacity-90">
-//               Наша продукция соответствует всем требованиям российских и международных стандартов
-//             </p>
-//           </div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ГОСТ</div>
-//               <p className="text-sm opacity-80">19222-84</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">СТО</div>
-//               <p className="text-sm opacity-80">96557188-001-2021</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ISO</div>
-//               <p className="text-sm opacity-80">14001:2015</p>
-//             </div>
-//             <div className="bg-white/10 p-6 rounded-lg text-center">
-//               <div className="text-3xl font-bold mb-2">ФЗ</div>
-//               <p className="text-sm opacity-80">№ 123-ФЗ</p>
-//             </div>
-//           </div>
-
-//           <div className="text-center">
-//             <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-//               Все наши арболитовые панели имеют технические свидетельства, сертификаты пожарной безопасности и санитарно-эпидемиологические заключения.
-//             </p>
-//             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-3">
-//               <Link href="/certificates">
-//                 Посмотреть сертификаты <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* CTA Section */}
-//       <section className="py-20">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-//           <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-6">Узнайте больше о нашей продукции</h2>
-//           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-//             Изучите технические характеристики и возможности применения наших арболитовых панелей
-//           </p>
-//           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-//             <Button asChild size="lg" className="text-lg px-8 py-3">
-//               <Link href="/product">
-//                 Технические характеристики <ArrowRight className="ml-2 h-5 w-5" />
-//               </Link>
-//             </Button>
-//             <Button 
-//               size="lg" 
-//               variant="outline" 
-//               className="text-lg px-8 py-3"
-//               onClick={() => setIsModalOpen(true)}
-//             >
-//               Запросить консультацию
-//             </Button>
-//           </div>
-//         </div>
-//       </section>
-
-//       <TelegramModal 
-//         isOpen={isModalOpen} 
-//         onClose={() => setIsModalOpen(false)} 
-//       />
-//     </div>
-//   )
-// }
-
-
-
-
-
-
-
-
 'use client'
 import { useState, useCallback } from 'react';
 import { Button } from "@/components/ui/button"
@@ -1545,6 +6,7 @@ import { ArrowRight, Factory, Settings, CheckSquare, Truck, Shield, Recycle, Zap
 import Link from "next/link"
 import TelegramModal from "@/components/TelegramModal"
 import Image from 'next/image'
+import { useI18n } from '@/providers/i18n-providers';
 
 // Оптимизированные размеры для разных экранов
 const IMAGE_SIZES = {
@@ -1560,7 +22,10 @@ const IMAGE_SIZES = {
   }
 };
 
+// В компоненте заменим все t('production.title') на соответствующие ключи из твоего формата
+
 export default function ProductionProcessPage() {
+  const { t } = useI18n()
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
@@ -1573,66 +38,66 @@ export default function ProductionProcessPage() {
   const productionSteps = [
     {
       step: 1,
-      title: "Подготовка деревянного каркаса",
-      description: "В начале процесса формируется деревянный каркас. Он служит основой и придаёт будущей панели статическую прочность, обеспечивая стабильность конструкции на долгие годы."
+      title: t('ProductionStep1Title'),
+      description: t('ProductionStep1Description')
     },
     {
       step: 2,
-      title: "Измельчение мискантуса",
-      description: "Стебли мискантуса перерабатываются в щепу и доводятся до оптимального размера. Такая структура позволяет материалу лучше связываться с цементирующим компонентом."
+      title: t('ProductionStep2Title'),
+      description: t('ProductionStep2Description')
     },
     {
       step: 3,
-      title: "Создание смеси",
-      description: "Щепа мискантуса тщательно перемешивается с водой и 10% бетона. В итоге получается экологичный состав, где 90% натурального сырья и лишь 10% связующего материала."
+      title: t('ProductionStep3Title'),
+      description: t('ProductionStep3Description')
     },
     {
       step: 4,
-      title: "Формование панели",
-      description: "Готовая смесь заливается в деревянный каркас, установленный на формировочном столе. Каждый миллиметр тщательно заполняется материалом."
+      title: t('ProductionStep4Title'),
+      description: t('ProductionStep4Description')
     },
     {
       step: 5,
-      title: "Уплотнение",
-      description: "Смесь аккуратно утрамбовывается внутри каркаса. Это позволяет устранить все пустоты и гарантирует равномерную плотность панели."
+      title: t('ProductionStep5Title'),
+      description: t('ProductionStep5Description')
     },
     {
       step: 6,
-      title: "Горизонтальная сушка",
-      description: "Формы с панелями выдерживаются в горизонтальном положении на протяжении 7 дней для первичного высыхания."
+      title: t('ProductionStep6Title'),
+      description: t('ProductionStep6Description')
     },
     {
       step: 7,
-      title: "Вертикальная досушка",
-      description: "После этого панели устанавливаются вертикально и проходят завершающий этап сушки. Полный цикл составляет 21 день."
+      title: t('ProductionStep7Title'),
+      description: t('ProductionStep7Description')
     },
     {
       step: 8,
-      title: "Готовность к монтажу",
-      description: "По завершении цикла панель полностью готова к установке. На строительной площадке она монтируется с помощью крана и соединяется специальными винтами, образуя надёжные и долговечные стены."
+      title: t('ProductionStep8Title'),
+      description: t('ProductionStep8Description')
     }
   ];
 
   const harvestingSteps = [
     {
       step: 1,
-      title: "Сбор урожая",
-      description: "Сбор урожая в феврале-марте месяце, когда сборочная техника не требуется для других нужд, что значительно упрощает данную задачу."
+      title: t('HarvestingStep1Title'),
+      description: t('HarvestingStep1Description')
     },
     {
       step: 2,
-      title: "Досушка",
-      description: "Мискантус оставляется на досушку на некоторое время."
+      title: t('HarvestingStep2Title'),
+      description: t('HarvestingStep2Description')
     },
     {
       step: 3,
-      title: "Упаковка",
-      description: "Мискантус упаковывается либо в Bigbag по 400-500кг, либо в упаковки по 25 кг, все зависит от цели использования материала."
+      title: t('HarvestingStep3Title'),
+      description: t('HarvestingStep3Description')
     },
     {
       step: 4,
-      title: "Измельчение",
-      description: "Мискантус проходит фазу измельчения до нужного размера чтобы его использовать в производстве строительных панелей и строительных блоков."
+      title: t('HarvestingStep4Title'),
+      description: t('HarvestingStep4Description')
     }
   ];
 
@@ -1650,10 +115,10 @@ export default function ProductionProcessPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-primary mb-6">
-              Как мы производим наши арболитовые панели
+              {t('ProductionTitle')}
             </h1>
             <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Узнайте о нашем высокотехнологичном процессе производства, который превращает древесную щепу и цемент в инновационный строительный материал
+              {t('ProductionSubtitle')}
             </p>
           </div>
         </div>
@@ -1663,9 +128,9 @@ export default function ProductionProcessPage() {
       <section className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">Этапы производства</h2>
+            <h2 className="text-3xl sm:text-4xl font-serif font-black text-primary mb-4">{t('ProductionStepsTitle')}</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              От тщательного отбора сырья до контроля качества готовой продукции
+              {t('ProductionStepsSubtitle')}
             </p>
           </div>
 
@@ -1681,7 +146,7 @@ export default function ProductionProcessPage() {
                     >
                       <Image
                         src={getImagePath("/production2/production", item)}
-                        alt={`Производственный процесс ${item}`}
+                        alt={`${t('ProductionImageAlt')} ${item}`}
                         className="object-cover hover:scale-105 transition-transform duration-700"
                         fill
                         sizes={`(max-width: 640px) 256px, (max-width: 768px) 320px, 384px`}
@@ -1715,7 +180,7 @@ export default function ProductionProcessPage() {
           </div>
 
           {/* Видео процесса производства */}
-          <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
+          {/* <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
             <div className="aspect-video bg-muted relative">
               {!showVideo ? (
                 <div className="absolute inset-0 flex items-center justify-center cursor-pointer" 
@@ -1726,7 +191,6 @@ export default function ProductionProcessPage() {
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
-                    <p className="text-base sm:text-lg font-medium text-foreground">Посмотрите наш процесс производства</p>
                   </div>
                 </div>
               ) : (
@@ -1734,7 +198,6 @@ export default function ProductionProcessPage() {
                   <iframe 
                     className="w-full h-full" 
                     src="https://www.youtube.com/embed/RyIgqpwG9lM" 
-                    title="Процесс производства арболитовых панелей" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen
@@ -1743,12 +206,12 @@ export default function ProductionProcessPage() {
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
 
           {/* Лента фотографий добычи мискантуса */}
           <div className="mb-16">
             <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">
-              Этапы добычи мискантуса
+              {t('ProductionHarvestingTitle')}
             </h3>
             <div className="relative">
               <div className="flex overflow-hidden">
@@ -1760,7 +223,7 @@ export default function ProductionProcessPage() {
                     >
                       <Image
                         src={getImagePath("/production/production", item)}
-                        alt={`Добыча мискантуса этап ${item}`}
+                        alt={`${t('HarvestingImageAlt')} ${item}`}
                         className="object-cover hover:scale-105 transition-transform duration-700"
                         fill
                         sizes={`(max-width: 640px) 256px, (max-width: 768px) 320px, 384px`}
@@ -1799,7 +262,7 @@ export default function ProductionProcessPage() {
               <div className="rounded-lg shadow-2xl overflow-hidden">
                 <Image
                   src="/lupa2.webp"
-                  alt="Производственная линия арболитовых панелей"
+                  alt={t('ProductionEquipmentImageAlt')}
                   width={600}
                   height={400}
                   className="w-full h-auto transition-transform duration-700 hover:scale-105"
@@ -1810,48 +273,28 @@ export default function ProductionProcessPage() {
                   quality={80}
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-primary text-primary-foreground p-3 sm:p-4 rounded-lg shadow-lg">
-                <div className="text-xl sm:text-3xl font-bold">15+ лет</div>
-                <div className="text-xs sm:text-sm">на рынке</div>
-              </div>
             </div>
             <div>
-              <h3 className="text-2xl font-serif font-black text-primary mb-6">Современное оборудование</h3>
+              <h3 className="text-2xl font-serif font-black text-primary mb-6">{t('ProductionEquipmentTitle')}</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Наше производство оснащено автоматизированными линиями европейского качества, 
-                что обеспечивает стабильность характеристик каждой панели. Компьютеризированный 
-                контроль всех параметров позволяет минимизировать человеческий фактор.
+                {t('ProductionEquipmentDescription')}
               </p>
               <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
-                <li className="flex items-center">
-                  <CheckSquare className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2" />
-                  <span className="text-sm sm:text-base">Автоматические дозаторы компонентов</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckSquare className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2" />
-                  <span className="text-sm sm:text-base">Гидравлические прессы с ЧПУ</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckSquare className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2" />
-                  <span className="text-sm sm:text-base">Климатические камеры для отверждения</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckSquare className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2" />
-                  <span className="text-sm sm:text-base">Роботизированные линии упаковки</span>
-                </li>
+                {[
+                  t('ProductionEquipmentFeature1'),
+                  t('ProductionEquipmentFeature2'),
+                  t('ProductionEquipmentFeature3'),
+                  t('ProductionEquipmentFeature4')
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center">
+                    <CheckSquare className="h-4 w-4 sm:h-5 sm:w-5 text-primary mr-2" />
+                    <span className="text-sm sm:text-base">{item}</span>
+                  </li>
+                ))}
               </ul>
               
               {/* Интерактивная статистика */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                <div className="bg-muted p-3 sm:p-4 rounded-lg text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">500+</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">панелей в день</div>
-                </div>
-                <div className="bg-muted p-3 sm:p-4 rounded-lg text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">98%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">соответствие стандартам</div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -1878,9 +321,9 @@ export default function ProductionProcessPage() {
       <section className="py-16 sm:py-20 bg-muted/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4">Контроль качества</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4">{t('QualityControlTitle')}</h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Многоступенчатая система проверки на каждом этапе производства
+              {t('QualityControlSubtitle')}
             </p>
           </div>
 
@@ -1890,9 +333,9 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4 mx-auto">
                   <Settings className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Входной контроль</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('QualityControlStep1Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Проверка каждой партии сырья: фракционный состав щепы, марка цемента, активность добавок
+                  {t('QualityControlStep1Description')}
                 </p>
               </CardContent>
             </Card>
@@ -1902,9 +345,9 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4 mx-auto">
                   <Factory className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Операционный контроль</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('QualityControlStep2Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Постоянный мониторинг параметров на всех этапах: влажность, плотность, время смешивания
+                  {t('QualityControlStep2Description')}
                 </p>
               </CardContent>
             </Card>
@@ -1914,28 +357,28 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4 mx-auto">
                   <CheckSquare className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Приёмочный контроль</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('QualityControlStep3Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Испытания готовой продукции на прочность, теплопроводность, влажность и геометрию
+                  {t('QualityControlStep3Description')}
                 </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="mt-12 sm:mt-16 bg-card p-6 sm:p-8 rounded-lg shadow-lg">
-            <h3 className="text-xl sm:text-2xl font-serif font-black text-primary mb-4 sm:mb-6 text-center">Испытательная лаборатория</h3>
+            <h3 className="text-xl sm:text-2xl font-serif font-black text-primary mb-4 sm:mb-6 text-center">{t('QualityControlLabTitle')}</h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
               <div>
                 <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                  На собственном испытательном центре мы проводим регулярные тесты продукции:
+                  {t('QualityControlLabDescription')}
                 </p>
                 <ul className="space-y-2 sm:space-y-3">
                   {[
-                    "Испытания на прочность при сжатии и изгибе",
-                    "Определение коэффициента теплопроводности",
-                    "Тесты на морозостойкость и влагопоглощение",
-                    "Огневые испытания на пожаробезопасность",
-                    "Акустические тесты для оценки звукоизоляции"
+                    t('QualityControlTest1'),
+                    t('QualityControlTest2'),
+                    t('QualityControlTest3'),
+                    t('QualityControlTest4'),
+                    t('QualityControlTest5')
                   ].map((item, index) => (
                     <li key={index} className="flex items-center">
                       <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></div>
@@ -1947,7 +390,7 @@ export default function ProductionProcessPage() {
               <div className="relative">
                 <Image
                   src="/laba.webp"
-                  alt="Испытательная лаборатория"
+                  alt={t('QualityControlLabImageAlt')}
                   width={500}
                   height={350}
                   className="rounded-lg shadow-xl w-full h-auto"
@@ -1963,14 +406,13 @@ export default function ProductionProcessPage() {
         </div>
       </section>
 
-      {/* Остальные секции с аналогичной оптимизацией */}
       {/* Advantages Section */}
       <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4">Преимущества нашего производства</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4">{t('AdvantagesTitle')}</h2>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Технологии, которые делают наши арболитовые панели лучше
+              {t('AdvantagesSubtitle')}
             </p>
           </div>
 
@@ -1980,9 +422,9 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
                   <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Энергоэффективность</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('Advantage1Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Процесс производства требует на 70% меньше энергии по сравнению с традиционными бетонными блоками
+                  {t('Advantage1Description')}
                 </p>
               </CardContent>
             </Card>
@@ -1992,9 +434,9 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
                   <Recycle className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Безотходное производство</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('Advantage2Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Все обрезки и брак перерабатываются и возвращаются в производственный цикл
+                  {t('Advantage2Description')}
                 </p>
               </CardContent>
             </Card>
@@ -2004,9 +446,9 @@ export default function ProductionProcessPage() {
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 sm:mb-4">
                   <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">Стабильное качество</h3>
+                <h3 className="text-lg sm:text-xl font-serif font-bold mb-3 sm:mb-4">{t('Advantage3Title')}</h3>
                 <p className="text-muted-foreground text-xs sm:text-sm">
-                  Автоматизация обеспечивает одинаковые характеристики каждой партии продукции
+                  {t('Advantage3Description')}
                 </p>
               </CardContent>
             </Card>
@@ -2014,54 +456,17 @@ export default function ProductionProcessPage() {
         </div>
       </section>
 
-      {/* Certificates Section */}
-      <section className="py-16 sm:py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black mb-4">Сертификаты и соответствие</h2>
-            <p className="text-lg sm:text-xl max-w-2xl mx-auto opacity-90">
-              Наша продукция соответствует всем требованиям российских и международных стандартов
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
-            {[
-              { name: "ГОСТ", value: "19222-84" },
-              { name: "СТО", value: "96557188-001-2021" },
-              { name: "ISO", value: "14001:2015" },
-              { name: "ФЗ", value: "№ 123-ФЗ" }
-            ].map((cert, index) => (
-              <div key={index} className="bg-white/10 p-4 sm:p-6 rounded-lg text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">{cert.name}</div>
-                <p className="text-xs sm:text-sm opacity-80">{cert.value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto opacity-90">
-              Все наши арболитовые панели имеют технические свидетельства, сертификаты пожарной безопасности и санитарно-эпидемиологические заключения.
-            </p>
-            <Button asChild size="lg" variant="secondary" className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3">
-              <Link href="/certificates">
-                Посмотреть сертификаты <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-16 sm:py-20">
+      {/* <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4 sm:mb-6">Узнайте больше о нашей продукции</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4 sm:mb-6">{t('CTATitle')}</h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Изучите технические характеристики и возможности применения наших арболитовых панелей
+            {t('CTASubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Button asChild size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3">
               <Link href="/product">
-                Технические характеристики <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                {t('CTAButton1')} <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Link>
             </Button>
             <Button 
@@ -2070,11 +475,11 @@ export default function ProductionProcessPage() {
               className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3"
               onClick={() => setIsModalOpen(true)}
             >
-              Запросить консультацию
+              {t('CTAButton2')}
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <TelegramModal 
         isOpen={isModalOpen} 

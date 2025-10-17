@@ -1373,20 +1373,8 @@ export default function PortfolioPage() {
                       <Eye className="h-10 w-10 text-white" />
                     </div>
                   </div>
-                  <Badge className="absolute top-4 left-4">
-                    {project.category === 'residential' && t('category1')}
-                    {project.category === 'commercial' && t('category2')}
-                    {project.category === 'institutional' && t('category3')}
-                    {project.category === 'industrial' && t('category4')}
-                  </Badge>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-serif font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">
-                    {project.id === 'case-study-1' && t('caseDescr1Short')}
-                    {project.id === 'case-study-2' && t('caseDescr2Short')}
-                    {project.id === 'case-study-3' && t('caseDescr3Short')}
-                  </p>
                   <Button 
                     onClick={() => openModal(project.id)}
                     variant="outline" 
