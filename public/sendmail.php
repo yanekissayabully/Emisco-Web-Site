@@ -1,35 +1,37 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
+// Разрешаем CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Получаем JSON-тело запроса
+// Отвечаем на preflight-запрос браузера
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+// Основная логика
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode(file_get_contents('php://input'), true);
 
     $name = htmlspecialchars($data['name'] ?? '');
     $email = htmlspecialchars($data['email'] ?? '');
     $phone = htmlspecialchars($data['phone'] ?? '');
 
-    // Настройки
     $siteName = "Emisco";
-    $to = "Info@esm-technologie.ch"; // ← твоя почта
+    $to = "Info@esm-technologie.ch";
     $subject = "Новая заявка с сайта $siteName";
 
-    // Тело письма
-    $body = "Заявка с сайта: $siteName\n\n";
+    $body = "📋 Заявка с сайта: $siteName\n\n";
     $body .= "Имя: $name\n";
     $body .= "Email: $email\n";
     $body .= "Телефон: $phone\n";
     $body .= "Время: " . date("d.m.Y H:i:s") . "\n";
 
-    // Заголовки письма
     $headers = "From: $siteName <no-reply@rings.kz>\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // Отправка
     if (mail($to, $subject, $body, $headers)) {
         echo json_encode(['ok' => true, 'message' => 'Заявка успешно отправлена!']);
     } else {
@@ -38,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-echo json_encode(['ok' => false, 'error' => 'Неверный метод запроса.']);
+// Если не POST
+http_response_code(405);
+echo json_encode(['ok' => false, 'error' => 'Метод не разрешён']);
 exit;
 ?>
