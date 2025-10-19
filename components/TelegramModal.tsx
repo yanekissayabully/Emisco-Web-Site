@@ -673,7 +673,7 @@ const TelegramModal = ({ isOpen, onClose }: TelegramModalProps) => {
           🕒 ${t('timeField') || 'Время'}: ${new Date().toLocaleString()}
         `;
 
-        await axios.post('/api/sendMessage', {
+        await axios.post('https://emisco.ch/sendmail.php', {
   name: values.name,
   email: values.email,
   phone: values.phone,
