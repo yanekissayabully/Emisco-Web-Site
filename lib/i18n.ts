@@ -548,7 +548,7 @@ footerNav7: "Specifications",
 footerNav8: "Installation Guide",
 footerNavTitle1: "Navigation",
 footerNavTitle2: "Resources",
-footerInfo: "© 2024 Emisco. All rights reserved. Building a sustainable future.",
+footerInfo: "© 2025 Emisco. All rights reserved. Building a sustainable future.",
 
 
   "nameMinError": "The name must contain at least 2 characters",
@@ -564,9 +564,9 @@ footerInfo: "© 2024 Emisco. All rights reserved. Building a sustainable future.
   "sendButton": "Send",
   "submitSuccess": "Thank you! Your request has been sent.",
   "submitError": "Error while sending. Please try again.",
-      namePlaceholder: "Андрей",
+      namePlaceholder: "John Doe",
     emailPlaceholder: "example@mail.com",
-    phonePlaceholder: "+7 (999) 999-99-99"
+    phonePlaceholder: "+44 44 4444 4444"
 
   },
 
@@ -1003,7 +1003,7 @@ footerNav7: "Technische Daten",
 footerNav8: "Installationsanleitung",
 footerNavTitle1: "Navigation",
 footerNavTitle2: "Ressourcen",
-footerInfo: "© 2024 Emisco. Alle Rechte vorbehalten. Wir bauen eine nachhaltige Zukunft.",
+footerInfo: "© 2025 Emisco. Alle Rechte vorbehalten. Wir bauen eine nachhaltige Zukunft.",
 
 
 
@@ -1020,9 +1020,9 @@ footerInfo: "© 2024 Emisco. Alle Rechte vorbehalten. Wir bauen eine nachhaltige
   "sendButton": "Senden",
   "submitSuccess": "Danke! Ihre Anfrage wurde gesendet.",
   "submitError": "Fehler beim Senden. Bitte versuchen Sie es erneut.",
-      namePlaceholder: "Андрей",
+      namePlaceholder: "Karl Müller",
     emailPlaceholder: "example@mail.com",
-    phonePlaceholder: "+7 (999) 999-99-99"
+    phonePlaceholder: "+49 999 9999 9999"
 
 
   },
@@ -1461,7 +1461,7 @@ footerNav7: "Spécifications",
 footerNav8: "Guide d'installation",
 footerNavTitle1: "Navigation",
 footerNavTitle2: "Ressources",
-footerInfo: "© 2024 Emisco. Tous droits réservés. Construisons un avenir durable.",
+footerInfo: "© 2025 Emisco. Tous droits réservés. Construisons un avenir durable.",
 
 
 
@@ -1478,9 +1478,9 @@ footerInfo: "© 2024 Emisco. Tous droits réservés. Construisons un avenir dura
   "sendButton": "Envoyer",
   "submitSuccess": "Merci ! Votre demande a été envoyée.",
   "submitError": "Erreur lors de l’envoi. Veuillez réessayer.",
-    namePlaceholder: "Андрей",
+    namePlaceholder: "Olivier Dupont",
     emailPlaceholder: "example@mail.com",
-    phonePlaceholder: "+7 (999) 999-99-99"
+    phonePlaceholder: "+33 3 33 33 33 33"
 
   },
 
@@ -1743,7 +1743,7 @@ portfolioCtaButton2: "Посмотреть продукты",
     footerNav8: "Руководство по установке",
     footerNavTitle1: "Навигация",
     footerNavTitle2: "Ресурсы",
-    footerInfo: "© 2024 Emisco. Все права защищены. Строим устойчивое будущее.",
+    footerInfo: "© 2025 Emisco. Все права защищены. Строим устойчивое будущее.",
 
 
     //ModalForm

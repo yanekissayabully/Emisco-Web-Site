@@ -4,76 +4,76 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match eco-friendly design brief */
-  --background: #ffffff;
-  --foreground: #475569;
-  --card: #ecfeff;
-  --card-foreground: #164e63;
-  --popover: #ffffff;
-  --popover-foreground: #475569;
-  --primary: #164e63;
-  --primary-foreground: #ffffff;
-  --secondary: #8b5cf6;
-  --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
-  --muted-foreground: #374151;
-  --accent: #8b5cf6;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #475569;
-  --input: #ecfeff;
-  --ring: rgba(22, 78, 99, 0.5);
-  --chart-1: #8b5cf6;
-  --chart-2: #164e63;
-  --chart-3: #dc2626;
-  --chart-4: #f59e0b;
-  --chart-5: #475569;
+  /* Updated color tokens with muted earthy palette */
+  --background: #fefefc;
+  --foreground: #3a453a;
+  --card: #f8f9f5;
+  --card-foreground: #2a3d35;
+  --popover: #fefefc;
+  --popover-foreground: #3a453a;
+  --primary: #3a6b5f;
+  --primary-foreground: #fefefc;
+  --secondary: #5a7d55;
+  --secondary-foreground: #fefefc;
+  --muted: #f0f2eb;
+  --muted-foreground: #5a6d52;
+  --accent: #4a5530;
+  --accent-foreground: #fefefc;
+  --destructive: #b45352;
+  --destructive-foreground: #fefefc;
+  --border: #4a6b62;
+  --input: #f8f9f5;
+  --ring: rgba(58, 107, 95, 0.3);
+  --chart-1: #5a7d55;
+  --chart-2: #3a6b5f;
+  --chart-3: #b45352;
+  --chart-4: #4a5530;
+  --chart-5: #6a7d62;
   --radius: 0.5rem;
-  --sidebar: #ecfeff;
-  --sidebar-foreground: #164e63;
-  --sidebar-primary: #164e63;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #8b5cf6;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #475569;
-  --sidebar-ring: rgba(22, 78, 99, 0.5);
+  --sidebar: #f8f9f5;
+  --sidebar-foreground: #2a3d35;
+  --sidebar-primary: #3a6b5f;
+  --sidebar-primary-foreground: #fefefc;
+  --sidebar-accent: #5a7d55;
+  --sidebar-accent-foreground: #fefefc;
+  --sidebar-border: #4a6b62;
+  --sidebar-ring: rgba(58, 107, 95, 0.3);
 }
 
 .dark {
-  /* Updated dark mode tokens to maintain eco-friendly theme */
-  --background: #0f172a;
-  --foreground: #f1f5f9;
-  --card: #1e293b;
-  --card-foreground: #f1f5f9;
-  --popover: #1e293b;
-  --popover-foreground: #f1f5f9;
-  --primary: #22d3ee;
-  --primary-foreground: #0f172a;
-  --secondary: #a855f7;
-  --secondary-foreground: #f1f5f9;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #a855f7;
-  --accent-foreground: #f1f5f9;
-  --destructive: #ef4444;
-  --destructive-foreground: #f1f5f9;
-  --border: #334155;
-  --input: #334155;
-  --ring: rgba(34, 211, 238, 0.5);
-  --chart-1: #a855f7;
-  --chart-2: #22d3ee;
-  --chart-3: #ef4444;
-  --chart-4: #f59e0b;
-  --chart-5: #94a3b8;
-  --sidebar: #1e293b;
-  --sidebar-foreground: #f1f5f9;
-  --sidebar-primary: #22d3ee;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #a855f7;
-  --sidebar-accent-foreground: #f1f5f9;
-  --sidebar-border: #334155;
-  --sidebar-ring: rgba(34, 211, 238, 0.5);
+  /* Dark mode with muted natural tones */
+  --background: #1a211e;
+  --foreground: #e4e8de;
+  --card: #2a3d35;
+  --card-foreground: #e4e8de;
+  --popover: #2a3d35;
+  --popover-foreground: #e4e8de;
+  --primary: #4d8a7c;
+  --primary-foreground: #1a211e;
+  --secondary: #6b9665;
+  --secondary-foreground: #1a211e;
+  --muted: #3a554d;
+  --muted-foreground: #b8c4a8;
+  --accent: #5a6540;
+  --accent-foreground: #e4e8de;
+  --destructive: #c46b6a;
+  --destructive-foreground: #e4e8de;
+  --border: #5a7d55;
+  --input: #3a554d;
+  --ring: rgba(77, 138, 124, 0.3);
+  --chart-1: #6b9665;
+  --chart-2: #4d8a7c;
+  --chart-3: #c46b6a;
+  --chart-4: #5a6540;
+  --chart-5: #8a9d7a;
+  --sidebar: #2a3d35;
+  --sidebar-foreground: #e4e8de;
+  --sidebar-primary: #4d8a7c;
+  --sidebar-primary-foreground: #1a211e;
+  --sidebar-accent: #6b9665;
+  --sidebar-accent-foreground: #1a211e;
+  --sidebar-border: #5a7d55;
+  --sidebar-ring: rgba(77, 138, 124, 0.3);
 }
 
 @theme inline {
@@ -114,7 +114,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Added custom font variables for Montserrat and Open Sans */
+  /* Font variables */
   --font-sans: var(--font-open-sans);
   --font-serif: var(--font-montserrat);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

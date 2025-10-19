@@ -143,11 +143,16 @@ export default function AboutPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             {t('aboutCtaDescription')}
           </p>
-          <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-3">
-            <Link href="/services">
-              {t('aboutCtaButton')} <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+<Button 
+  asChild 
+  size="lg" 
+  variant="secondary" 
+  className="text-lg px-8 py-3"
+>
+  <a href="tel:+41795760405" className="flex items-center">
+    {t('aboutCtaButton')} <ArrowRight className="ml-2 h-5 w-5" />
+  </a>
+</Button>
         </div>
       </section>
     </div>

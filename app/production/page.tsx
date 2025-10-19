@@ -179,35 +179,6 @@ export default function ProductionProcessPage() {
             ))}
           </div>
 
-          {/* Видео процесса производства */}
-          {/* <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl">
-            <div className="aspect-video bg-muted relative">
-              {!showVideo ? (
-                <div className="absolute inset-0 flex items-center justify-center cursor-pointer" 
-                     onClick={() => setShowVideo(true)}>
-                  <div className="text-center p-4 sm:p-8">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-primary/90 rounded-full flex items-center justify-center hover:bg-primary transition-colors mx-auto mb-3 sm:mb-4">
-                      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="absolute inset-0">
-                  <iframe 
-                    className="w-full h-full" 
-                    src="https://www.youtube.com/embed/RyIgqpwG9lM" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                </div>
-              )}
-            </div>
-          </div> */}
-
           {/* Лента фотографий добычи мискантуса */}
           <div className="mb-16">
             <h3 className="text-2xl font-serif font-black text-primary mb-8 text-center">
@@ -457,29 +428,33 @@ export default function ProductionProcessPage() {
       </section>
 
       {/* CTA Section */}
-      {/* <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-black text-primary mb-4 sm:mb-6">{t('CTATitle')}</h2>
           <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto">
             {t('CTASubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Button asChild size="lg" className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3">
-              <Link href="/product">
-                {t('CTAButton1')} <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-            </Button>
             <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3"
-              onClick={() => setIsModalOpen(true)}
-            >
-              {t('CTAButton2')}
-            </Button>
+  size="lg" 
+  variant="outline" 
+  className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3"
+  onClick={() => setIsModalOpen(true)}
+>
+  {t('CTAButton1')} 
+</Button>
+<Button 
+  asChild 
+  size="lg" 
+  className="text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3"
+>
+  <Link href="/portfolio" className="flex items-center">
+    {t('CTAButton2')} <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+  </Link>
+</Button>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <TelegramModal 
         isOpen={isModalOpen} 
