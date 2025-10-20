@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // 2. Отправляем письмо через Resend
     const { data, error } = await resend.emails.send({
       from: 'Emisco.ch <onboarding@resend.dev>', // Можно настроить свой домен потом
-      to: ['Info@esm-technologie.ch'], // ТВОЯ ПОЧТА ЗДЕСЬ!
+      to: ['nawaro.realestate@gmail.com'], // ТВОЯ ПОЧТА ЗДЕСЬ!
       subject: `🎯 Новая заявка с сайта: ${name}`,
       html: `
         <!DOCTYPE html>
