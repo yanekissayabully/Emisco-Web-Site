@@ -417,14 +417,14 @@ export default function PortfolioPage() {
       title: t('caseTitle3'),
       category: 'residential',
       media: [
-        { type: 'image', url: '/1g.webp', alt: 'Sustainable Office Complex' },
-        { type: 'image', url: '/2g.webp', alt: 'Office Interior' },
         { type: 'image', url: '/3g.webp', alt: 'Sustainable Office Complex' },
+        { type: 'image', url: '/2g.webp', alt: 'Office Interior' },
         { type: 'image', url: '/4g.webp', alt: 'Office Interior' },
         { type: 'image', url: '/5g.webp', alt: 'Sustainable Office Complex' },
         { type: 'image', url: '/6g.webp', alt: 'Office Interior' },
         { type: 'image', url: '/7g.webp', alt: 'Office Interior' },
         { type: 'image', url: '/8g.webp', alt: 'Office Interior' },
+        { type: 'image', url: '/1g.webp', alt: 'Sustainable Office Complex' },
         { type: 'video', url: '/v1.mp4', alt: 'Campus Tour' },
       ]
     },
