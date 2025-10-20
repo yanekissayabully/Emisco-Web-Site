@@ -5,30 +5,23 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, phone } = body;
 
-    // Отправка на твой PHP скрипт
-    const phpResponse = await fetch('https://emisco.ch/php/sendmail.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        phone,
-        subject: 'Новая заявка с сайта emisco.ch',
-        message: `Новая заявка с сайта emisco.ch\n\nИмя: ${name}\nEmail: ${email}\nТелефон: ${phone}`
-      })
+    // ⚠️ ЗАМЕНИ ПОЧТУ НА СВОЮ
+    const toEmail = 'aripov.cr7@gmail.com';
+    
+    // Отправка письма через Resend или другой сервис
+    // (нужно будет настроить email провайдера)
+    
+    // Пока просто логируем данные
+    console.log('Получена заявка:', { name, email, phone });
+    
+    // Временное решение - возвращаем успех
+    return NextResponse.json({ 
+      success: true,
+      message: 'Заявка получена (реальная отправка на почту скоро будет настроена)'
     });
-
-    const result = await phpResponse.json();
-
-    if (result.success) {
-      return NextResponse.json({ success: true });
-    } else {
-      return NextResponse.json({ success: false, error: result.error }, { status: 500 });
-    }
+    
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json({ success: false, error: 'Server error' }, { status: 500 });
+    console.error('Error:', error);
+    return NextResponse.json({ success: false }, { status: 500 });
   }
 }
