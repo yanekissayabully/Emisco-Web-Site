@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     // 2. Отправляем письмо через Resend
     const { data, error } = await resend.emails.send({
       from: 'Emisco.ch <onboarding@resend.dev>', // Можно настроить свой домен потом
-      to: ['aripov.cr7@gmail.com'], // ТВОЯ ПОЧТА ЗДЕСЬ!
+      to: ['Info@esm-technologie.ch'], // ТВОЯ ПОЧТА ЗДЕСЬ!
       subject: `🎯 Новая заявка с сайта: ${name}`,
       html: `
         <!DOCTYPE html>
@@ -40,70 +40,70 @@ export async function POST(request: Request) {
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>🎯 Новая заявка с сайта</h1>
+                    <h1>New application from the site</h1>
                     <p>emisco.ch</p>
                 </div>
                 
                 <div class="info">
                     <div class="field">
-                        <span class="label">👤 Имя:</span>
+                        <span class="label">Name:</span>
                         <span class="value">${name}</span>
                     </div>
                     <div class="field">
-                        <span class="label">📧 Email:</span>
+                        <span class="label">Email:</span>
                         <span class="value">${email}</span>
                     </div>
                     <div class="field">
-                        <span class="label">📞 Телефон:</span>
+                        <span class="label">Phone:</span>
                         <span class="value">${phone}</span>
                     </div>
                     <div class="field">
-                        <span class="label">⏰ Время отправки:</span>
+                        <span class="label">Time:</span>
                         <span class="value">${new Date().toLocaleString('ru-RU')}</span>
                     </div>
                 </div>
 
                 <div class="footer">
-                    <p>📧 Это письмо отправлено автоматически с сайта emisco.ch</p>
-                    <p>Не отвечайте на это письмо</p>
+                    <p>This letter was sent automatically from the website emisco.ch</p>
+                    <p>Don't reply to this letter</p>
                 </div>
             </div>
         </body>
         </html>
       `,
       text: `
-🎯 НОВАЯ ЗАЯВКА С САЙТА emisco.ch
+NEW APPLICATION FROM SITE emisco.ch
 
-👤 Имя: ${name}
-📧 Email: ${email} 
-📞 Телефон: ${phone}
+Name: ${name}
+Email: ${email} 
+Phone: ${phone}
 
-⏰ Время отправки: ${new Date().toLocaleString('ru-RU')}
-🌐 Сайт: emisco.ch
+Time: ${new Date().toLocaleString('ru-RU')}
+Site: emisco.ch
 
-Не отвечайте на это письмо
+Don't reply to this letter
       `
     });
 
     if (error) {
-      console.error('❌ Ошибка Resend:', error);
+      console.error('❌ Error Resend:', error);
       throw error;
     }
 
-    console.log('✅ Письмо отправлено через Resend:', data);
+    console.log('✅ Good Resend:', data);
 
     return NextResponse.json({ 
       success: true,
-      message: 'Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.'
+      message: 'Thank you! Your application has been accepted. We will contact you shortly.'
     });
 
   } catch (error) {
-    console.error('❌ Ошибка при отправке заявки:', error);
+    console.error('❌ Error when sending application:', error);
     
     // Даже при ошибке возвращаем успех пользователю
     return NextResponse.json({ 
       success: true,
-      message: 'Спасибо! Мы получили вашу заявку.'
+      message: 'Thank you! We have received your application.'
     });
   }
 }
